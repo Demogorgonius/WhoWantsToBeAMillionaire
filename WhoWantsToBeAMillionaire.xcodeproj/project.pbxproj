@@ -13,6 +13,8 @@
 		A5B895542B8BE18300A30134 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5B895522B8BE18300A30134 /* LaunchScreen.storyboard */; };
 		A5B895642B8BE28900A30134 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895632B8BE28900A30134 /* MainViewController.swift */; };
 		A5B895672B8BEA7A00A30134 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A5B895662B8BEA7A00A30134 /* SnapKit */; };
+		A5B895692B8D1BDC00A30134 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895682B8D1BDC00A30134 /* CustomView.swift */; };
+		A5B8956B2B8D1BFD00A30134 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B8956A2B8D1BFD00A30134 /* CustomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		A5B895532B8BE18300A30134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5B895552B8BE18300A30134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5B895632B8BE28900A30134 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A5B895682B8D1BDC00A30134 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		A5B8956A2B8D1BFD00A30134 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 		A5B8955E2B8BE20200A30134 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A5B895682B8D1BDC00A30134 /* CustomView.swift */,
+				A5B8956A2B8D1BFD00A30134 /* CustomViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,6 +205,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5B895642B8BE28900A30134 /* MainViewController.swift in Sources */,
+				A5B895692B8D1BDC00A30134 /* CustomView.swift in Sources */,
+				A5B8956B2B8D1BFD00A30134 /* CustomViewController.swift in Sources */,
 				A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */,
 				A5B8954A2B8BE18200A30134 /* SceneDelegate.swift in Sources */,
 			);

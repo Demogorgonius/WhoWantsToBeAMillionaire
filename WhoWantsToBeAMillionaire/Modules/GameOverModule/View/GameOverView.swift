@@ -10,8 +10,8 @@ import SnapKit
 
 
 // MARK: - GameOverView
-final class GameOverView: UIView {
-        
+final class GameOverView: CustomView {
+    
     // MARK: Private Properties
     private lazy var backgroundImageView = makeImageView(
         image: UIImage.BackgroundImage.background ?? UIImage()
@@ -35,34 +35,8 @@ final class GameOverView: UIView {
     
     private lazy var playAgainButton = makeButton()
     
-    // MARK: Init
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setViews()
-        layoutViews()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setViews()
-        layoutViews()
-    }
-}
-
-// MARK: - Actions
-extension GameOverView {
-    
-    @objc
-    private func didTapPlayAgainButton(_ button: UIButton) {
-        print("Button tapped")
-    }
-}
-
-// MARK: - Setup Views
-extension GameOverView {
-    
-    private func setViews() {
-        
+    // MARK: Set Views
+    override func setViews() {
         [backgroundImageView, logoImageView,
          attemptTitleLabel, loseTitleLabel,
          playAgainButton].forEach { addSubview($0) }
@@ -70,8 +44,8 @@ extension GameOverView {
         playAgainButton.addTarget(self, action: #selector(didTapPlayAgainButton), for: .touchUpInside)
     }
     
-    private func layoutViews() {
-        
+    // MARK: Layout Views
+    override func layoutViews() {
         backgroundImageView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.bottom.top.equalToSuperview()
@@ -101,6 +75,17 @@ extension GameOverView {
         }
     }
 }
+
+
+// MARK: - Actions
+extension GameOverView {
+    
+    @objc
+    private func didTapPlayAgainButton(_ button: UIButton) {
+        print("Button tapped")
+    }
+}
+
 
 // MARK: - UI Elements
 extension GameOverView {

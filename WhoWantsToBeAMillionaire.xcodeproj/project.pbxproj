@@ -21,6 +21,9 @@
 		AD0799E42B8F33F800AEFFE7 /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0799E32B8F33F800AEFFE7 /* QuestionsView.swift */; };
 		AD0799E62B8F691E00AEFFE7 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0799E52B8F691E00AEFFE7 /* QuestionView.swift */; };
 		AD0799EA2B8F748300AEFFE7 /* QuestionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0799E92B8F748300AEFFE7 /* QuestionHelper.swift */; };
+	 	D588C67C2B8F3B1700B39884 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588C67B2B8F3B1700B39884 /* Question.swift */; };
+		D588C67E2B8F3DC100B39884 /* QuestionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588C67D2B8F3DC100B39884 /* QuestionsAPI.swift */; };
+
 		D973137C2B8DFDBA0046083E /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973137B2B8DFDBA0046083E /* Sounds.swift */; };
 		D973137E2B8DFE930046083E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973137D2B8DFE930046083E /* Fonts.swift */; };
 		D9CEFE0A2B8FA3320009949C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEFE092B8FA3320009949C /* AudioPlayer.swift */; };
@@ -130,6 +133,7 @@
 		A5B895462B8BE18200A30134 /* WhoWantsToBeAMillionaire */ = {
 			isa = PBXGroup;
 			children = (
+				D588C67A2B8F3AF600B39884 /* Model */,
 				A5B8955B2B8BE1B600A30134 /* App */,
 				A5B8955D2B8BE1E800A30134 /* Services */,
 				A5B8955C2B8BE1C400A30134 /* Modules */,
@@ -404,6 +408,7 @@
 				A5B895642B8BE28900A30134 /* MainViewController.swift in Sources */,
 				D9CEFE0A2B8FA3320009949C /* AudioPlayer.swift in Sources */,
 				D9E769542B8DF5150096FAEC /* Images.swift in Sources */,
+				D588C67C2B8F3B1700B39884 /* Question.swift in Sources */,
 				A5B895692B8D1BDC00A30134 /* CustomView.swift in Sources */,
 				AD0799E62B8F691E00AEFFE7 /* QuestionView.swift in Sources */,
 				AD0799EA2B8F748300AEFFE7 /* QuestionHelper.swift in Sources */,

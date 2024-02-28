@@ -7,17 +7,12 @@
 
 import UIKit
 
-final class QuestionsViewController<V: QuestionsView>: UIViewController {
+final class QuestionsViewController: CustomViewController<QuestionsView> {
     
     
-    // MARK: Life Cycle
-    override func loadView() {
-        view = V()
-    }
-    
-    
-    var customView: V {
-        view as! V
+  // MARK: Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
 }

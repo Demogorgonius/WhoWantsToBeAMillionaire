@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class QuestionsView: UIView {
+final class QuestionsView: CustomView {
         
     // MARK: Private Properties
     /// Фоновое изображение
@@ -28,42 +28,19 @@ final class QuestionsView: UIView {
     // MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setViews()
         configureQuestionView()
-        layoutViews()
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setViews()
-        layoutViews()
+        fatalError("init(coder:) has not been implemented")
     }
-}
-
-// MARK: - Create and Setup Question View
-extension QuestionsView {
     
-    /// Создание и добавление в стек 15-ти вьюшек с номером вопроса и незгараемой суммой
-    private func configureQuestionView() {
-        (0...QuestionHelper.allCases.count - 1).reversed().forEach { i in
-            let title = QuestionHelper.allCases
-            let view = QuestionView(image: title[i].image, 
-                                    number: title[i].rawValue,
-                                    price: title[i].price)
-            questionsVStack.addArrangedSubview(view)
-        }
-    }
-}
-
-// MARK: - Setup Views
-extension QuestionsView {
-    
-    private func setViews() {
+    override func setViews() {
         [backgroundImageView, logoImageView,
          questionsVStack].forEach { addSubview($0) }
     }
     
-    private func layoutViews() {
+    override func layoutViews() {
         backgroundImageView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.bottom.top.equalToSuperview()
@@ -80,6 +57,21 @@ extension QuestionsView {
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-20)
             make.leading.equalToSuperview().offset(34)
             make.trailing.equalToSuperview().offset(-34)
+        }
+    }
+}
+
+// MARK: - Create and Setup Question View
+extension QuestionsView {
+    
+    /// Создание и добавление в стек 15-ти вьюшек с номером вопроса и незгараемой суммой
+    private func configureQuestionView() {
+        (0...QuestionHelper.allCases.count - 1).reversed().forEach { i in
+            let title = QuestionHelper.allCases
+            let view = QuestionView(image: title[i].image, 
+                                    number: title[i].rawValue,
+                                    price: title[i].price)
+            questionsVStack.addArrangedSubview(view)
         }
     }
 }

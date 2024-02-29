@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09578BA92B90C30B008F57D4 /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09578BA82B90C30B008F57D4 /* StartScreenView.swift */; };
+		09ACC9672B8FBEE100FA0CA2 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ACC9662B8FBEE100FA0CA2 /* StartScreenViewController.swift */; };
+		09ACC9692B8FBF2E00FA0CA2 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ACC9682B8FBF2E00FA0CA2 /* RegistrationViewController.swift */; };
 		A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895472B8BE18200A30134 /* AppDelegate.swift */; };
 		A5B8954A2B8BE18200A30134 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895492B8BE18200A30134 /* SceneDelegate.swift */; };
 		A5B895512B8BE18300A30134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B895502B8BE18300A30134 /* Assets.xcassets */; };
@@ -49,6 +52,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09578BA82B90C30B008F57D4 /* StartScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenView.swift; sourceTree = "<group>"; };
+		09ACC9662B8FBEE100FA0CA2 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
+		09ACC9682B8FBF2E00FA0CA2 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A5B895442B8BE18200A30134 /* WhoWantsToBeAMillionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoWantsToBeAMillionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B895472B8BE18200A30134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B895492B8BE18200A30134 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +109,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09ACC9632B8FBE9000FA0CA2 /* StartScreen */ = {
+			isa = PBXGroup;
+			children = (
+				09ACC9662B8FBEE100FA0CA2 /* StartScreenViewController.swift */,
+				09578BA82B90C30B008F57D4 /* StartScreenView.swift */,
+			);
+			path = StartScreen;
+			sourceTree = "<group>";
+		};
+		09ACC9652B8FBEAE00FA0CA2 /* RegistrationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				09ACC9682B8FBF2E00FA0CA2 /* RegistrationViewController.swift */,
+			);
+			path = RegistrationViewController;
+			sourceTree = "<group>";
+		};
 		A5B8953B2B8BE18200A30134 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +167,8 @@
 		A5B8955C2B8BE1C400A30134 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				09ACC9652B8FBEAE00FA0CA2 /* RegistrationViewController */,
+				09ACC9632B8FBE9000FA0CA2 /* StartScreen */,
 				A5B895602B8BE25800A30134 /* MainModule */,
 			);
 			path = Modules;
@@ -357,6 +382,9 @@
 				D588C67E2B8F3DC100B39884 /* QuestionsAPI.swift in Sources */,
 				D973137E2B8DFE930046083E /* Fonts.swift in Sources */,
 				A5B895642B8BE28900A30134 /* MainViewController.swift in Sources */,
+				09578BA92B90C30B008F57D4 /* StartScreenView.swift in Sources */,
+				09ACC9672B8FBEE100FA0CA2 /* StartScreenViewController.swift in Sources */,
+				09ACC9692B8FBF2E00FA0CA2 /* RegistrationViewController.swift in Sources */,
 				D9CEFE0A2B8FA3320009949C /* AudioPlayer.swift in Sources */,
 				D9E769542B8DF5150096FAEC /* Images.swift in Sources */,
 				D588C67C2B8F3B1700B39884 /* Question.swift in Sources */,
@@ -508,7 +536,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TWQL7PLAUC;
+				DEVELOPMENT_TEAM = GT292Y33C6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhoWantsToBeAMillionaire/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -540,7 +568,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TWQL7PLAUC;
+				DEVELOPMENT_TEAM = GT292Y33C6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhoWantsToBeAMillionaire/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

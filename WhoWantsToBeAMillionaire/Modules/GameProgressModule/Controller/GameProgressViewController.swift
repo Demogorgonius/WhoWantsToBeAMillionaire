@@ -1,8 +1,18 @@
 //
-//  GameProgressViewController.swift
+//  QuestionsViewController.swift
 //  WhoWantsToBeAMillionaire
 //
-//  Created by Sergey on 29.02.2024.
+//  Created by Nikolai Maksimov on 28.02.2024.
 //
 
-import Foundation
+import UIKit
+
+final class QuestionsViewController: CustomViewController<QuestionsView> {
+    
+    
+  // MARK: Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+}

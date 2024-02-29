@@ -37,6 +37,24 @@ class GameMainView: CustomView {
         textColor: .customWhite
     )
     
+    private lazy var timerLabel = makeLabel(
+        title: "30",
+        font: UIFont.TextFont.Question.label,
+        textColor: .customWhite
+    )
+    private lazy var getMoneyButton: UIButton = {
+        let button = UIButton()
+        
+        button.configuration = .filled()    
+        button.configuration?.title = "Забрать деньги"
+        button.configuration?.cornerStyle = .medium
+        button.configuration?.attributedTitle?.font = UIFont.TextFont.Question.label
+        button.configuration?.baseForegroundColor = .customWhite
+        button.configuration?.baseBackgroundColor = .customMint
+        
+        return button
+    }()
+    
     private lazy var answersVStack = makeStackView(axis: .vertical)
     private lazy var cluesHStack = makeStackView(axis: .horizontal)
     
@@ -59,6 +77,8 @@ class GameMainView: CustomView {
             questionTextLabel,
             questionNumberLabel,
             questionAmountLabel,
+            timerLabel,
+            getMoneyButton,
             answersVStack,
             cluesHStack,
         ].forEach { addSubview($0) }
@@ -102,6 +122,19 @@ class GameMainView: CustomView {
             make.left.equalTo(safeAreaLayoutGuide.snp.left).offset(10)
             make.leading.equalToSuperview().offset(34)
             make.trailing.equalToSuperview().offset(-34)
+        }
+        
+        timerLabel.snp.makeConstraints { make in
+            make.top.equalTo(answersVStack.snp.bottom).offset(20)
+            make.centerX.equalTo(self)
+        }
+        
+        getMoneyButton.snp.makeConstraints { make in
+            make.top.equalTo(timerLabel.snp.bottom).offset(20)
+            make.top.left.greaterThanOrEqualToSuperview()
+//            make.width.equalTo(100)
+//            make.height.equalTo(50)
+            make.centerX.equalTo(self)
         }
         
         cluesHStack.snp.makeConstraints { make in

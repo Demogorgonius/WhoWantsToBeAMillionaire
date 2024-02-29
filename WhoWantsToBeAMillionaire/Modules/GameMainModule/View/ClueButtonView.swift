@@ -32,7 +32,7 @@ final class ClueButtonView: UIView {
     }
     
     func addTarget(selector: Selector) {
-        button.addTarget(self, action: selector, for: .touchUpInside)
+        button.addTarget(nil, action: selector, for: .touchUpInside)
     }
 }
 

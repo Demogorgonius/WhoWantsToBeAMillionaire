@@ -56,18 +56,9 @@ class GameMainView: CustomView {
     }()
     
     private lazy var answersVStack = makeStackView(axis: .vertical)
+    
     private lazy var cluesHStack = makeStackView(axis: .horizontal)
-    
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configureAnswersView()
-        configureCluesView()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+
     
     // MARK: Set Views
     override func setViews() {
@@ -86,6 +77,7 @@ class GameMainView: CustomView {
     
     // MARK: Layout Views
     override func layoutViews() {
+        
         backgroundImageView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.bottom.top.equalToSuperview()
@@ -132,8 +124,6 @@ class GameMainView: CustomView {
         getMoneyButton.snp.makeConstraints { make in
             make.top.equalTo(timerLabel.snp.bottom).offset(20)
             make.top.left.greaterThanOrEqualToSuperview()
-//            make.width.equalTo(100)
-//            make.height.equalTo(50)
             make.centerX.equalTo(self)
         }
         
@@ -142,6 +132,9 @@ class GameMainView: CustomView {
             make.leading.equalToSuperview().offset(34)
             make.trailing.equalToSuperview().offset(-34)
         }
+        
+        configureAnswersView()
+        configureCluesView()
     }
     
     func setQuestion(_ question: Question) {
@@ -177,12 +170,12 @@ class GameMainView: CustomView {
 // MARK: - Actions
 extension GameMainView {
     @objc
-    private func questionAnswerHadler(_ button: UIButton) {
+    private func questionAnswerHandler(_ button: UIButton) {
         print("Button tapped")
     }
     
     @objc
-    private func clueButtonHadler(_ button: UIButton) {
+    private func clueButtonHandler(_ button: UIButton) {
         print("Button tapped")
     }
 }
@@ -191,7 +184,7 @@ extension GameMainView {
     private func configureAnswersView() {
         ["A","B","C","D"].forEach { i in
             let answerButton = AnswerButtonView(image: UIImage.ButtomImage.buttonBlue!, letter: i , text: "\(i) some var")
-//            answerButton.addTarget(selector: #selector(questionAnswerHadler))
+            answerButton.addTarget(selector: #selector(questionAnswerHandler))
             answersVStack.addArrangedSubview(answerButton)
         }
     }
@@ -203,7 +196,7 @@ extension GameMainView {
             UIImage.CluesImage.cluePeopleHelp
         ].forEach { image in
             let clueButton = ClueButtonView(image: image!)
-//            clueButton.addTarget(selector: #selector(clueButtonHadler))
+            clueButton.addTarget(selector: #selector(clueButtonHandler))
             cluesHStack.addArrangedSubview(clueButton)
         }}
 }

@@ -38,7 +38,7 @@ extension UIImage {
             return UIImage(named: "background")
         }
         
-        static var backgroundWithModey: UIImage? {
+        static var backgroundWithMoney: UIImage? {
             return UIImage(named: "background-with-money")
         }
         

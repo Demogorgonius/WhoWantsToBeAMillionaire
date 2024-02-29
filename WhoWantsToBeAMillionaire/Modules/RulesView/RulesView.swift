@@ -57,8 +57,8 @@ class RulesView: CustomView {
             }
         rulesLabel.snp.makeConstraints {
                 $0.centerX.equalToSuperview()
-                $0.bottom.equalTo(titleLabel.snp.top).offset(-9)  // Place rulesLabel above titleLabel
-                $0.width.equalToSuperview().inset(16)            // Adjust the width
+                $0.bottom.equalTo(titleLabel.snp.top).offset(-9)
+                $0.width.equalToSuperview().inset(16)
                 $0.height.equalTo(25)
             }
         

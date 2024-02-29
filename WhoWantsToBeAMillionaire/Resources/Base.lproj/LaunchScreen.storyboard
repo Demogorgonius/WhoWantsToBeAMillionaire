@@ -20,8 +20,9 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.png" translatesAutoresizingMaskIntoConstraints="NO" id="iHx-hG-a5O">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="uDy-M8-BD1">
-                                <rect key="frame" x="95" y="165" width="201" height="201"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="WCU-bM-073">
+                                <rect key="frame" x="96" y="165" width="201" height="201"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -30,9 +31,7 @@
                             <constraint firstItem="iHx-hG-a5O" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="1Av-gC-apW"/>
                             <constraint firstItem="iHx-hG-a5O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OMB-1L-wqO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iHx-hG-a5O" secondAttribute="trailing" id="Q62-2T-Qu0"/>
-                            <constraint firstItem="uDy-M8-BD1" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="107" id="Rdg-2G-k8W"/>
                             <constraint firstAttribute="bottom" secondItem="iHx-hG-a5O" secondAttribute="bottom" id="meG-aS-DJ5"/>
-                            <constraint firstItem="uDy-M8-BD1" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="165" id="wIv-85-Wbl"/>
                         </constraints>
                     </view>
                 </viewController>

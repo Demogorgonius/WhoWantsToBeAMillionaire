@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5AB293E2B8FD5210093B49E /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB293D2B8FD5210093B49E /* GameOverView.swift */; };
+		A5AB29402B8FD58E0093B49E /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB293F2B8FD58D0093B49E /* GameOverViewController.swift */; };
+		A5AB29462B8FD6D10093B49E /* GameProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB29452B8FD6D10093B49E /* GameProgressView.swift */; };
+		A5AB29482B8FD6F30093B49E /* GameProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB29472B8FD6F30093B49E /* GameProgressViewController.swift */; };
+		A5AB294A2B8FD70B0093B49E /* GameProgressHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB29492B8FD70B0093B49E /* GameProgressHelper.swift */; };
+		A5AB294C2B8FD84A0093B49E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB294B2B8FD84A0093B49E /* ProgressView.swift */; };
 		A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895472B8BE18200A30134 /* AppDelegate.swift */; };
 		A5B8954A2B8BE18200A30134 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895492B8BE18200A30134 /* SceneDelegate.swift */; };
 		A5B895512B8BE18300A30134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B895502B8BE18300A30134 /* Assets.xcassets */; };
@@ -47,6 +53,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5AB293D2B8FD5210093B49E /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		A5AB293F2B8FD58D0093B49E /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		A5AB29452B8FD6D10093B49E /* GameProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProgressView.swift; sourceTree = "<group>"; };
+		A5AB29472B8FD6F30093B49E /* GameProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProgressViewController.swift; sourceTree = "<group>"; };
+		A5AB29492B8FD70B0093B49E /* GameProgressHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameProgressHelper.swift; sourceTree = "<group>"; };
+		A5AB294B2B8FD84A0093B49E /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		A5B895442B8BE18200A30134 /* WhoWantsToBeAMillionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoWantsToBeAMillionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B895472B8BE18200A30134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B895492B8BE18200A30134 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +111,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5AB293A2B8FD49A0093B49E /* GameOverModule */ = {
+			isa = PBXGroup;
+			children = (
+				A5AB293C2B8FD4D90093B49E /* Controller */,
+				A5AB293B2B8FD4B80093B49E /* View */,
+			);
+			path = GameOverModule;
+			sourceTree = "<group>";
+		};
+		A5AB293B2B8FD4B80093B49E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5AB293D2B8FD5210093B49E /* GameOverView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5AB293C2B8FD4D90093B49E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5AB293F2B8FD58D0093B49E /* GameOverViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5AB29412B8FD5E90093B49E /* GameProgressModule */ = {
+			isa = PBXGroup;
+			children = (
+				A5AB29442B8FD6A70093B49E /* Helper */,
+				A5AB29432B8FD6340093B49E /* Controller */,
+				A5AB29422B8FD6210093B49E /* View */,
+			);
+			path = GameProgressModule;
+			sourceTree = "<group>";
+		};
+		A5AB29422B8FD6210093B49E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A5AB29452B8FD6D10093B49E /* GameProgressView.swift */,
+				A5AB294B2B8FD84A0093B49E /* ProgressView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A5AB29432B8FD6340093B49E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A5AB29472B8FD6F30093B49E /* GameProgressViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A5AB29442B8FD6A70093B49E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A5AB29492B8FD70B0093B49E /* GameProgressHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		A5B8953B2B8BE18200A30134 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +211,8 @@
 		A5B8955C2B8BE1C400A30134 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A5AB29412B8FD5E90093B49E /* GameProgressModule */,
+				A5AB293A2B8FD49A0093B49E /* GameOverModule */,
 				A5B895602B8BE25800A30134 /* MainModule */,
 			);
 			path = Modules;
@@ -340,14 +414,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5AB293E2B8FD5210093B49E /* GameOverView.swift in Sources */,
 				D973137E2B8DFE930046083E /* Fonts.swift in Sources */,
+				A5AB294C2B8FD84A0093B49E /* ProgressView.swift in Sources */,
 				A5B895642B8BE28900A30134 /* MainViewController.swift in Sources */,
 				D9CEFE0A2B8FA3320009949C /* AudioPlayer.swift in Sources */,
 				D9E769542B8DF5150096FAEC /* Images.swift in Sources */,
 				A5B895692B8D1BDC00A30134 /* CustomView.swift in Sources */,
 				A5B8956B2B8D1BFD00A30134 /* CustomViewController.swift in Sources */,
+				A5AB29462B8FD6D10093B49E /* GameProgressView.swift in Sources */,
+				A5AB294A2B8FD70B0093B49E /* GameProgressHelper.swift in Sources */,
+				A5AB29402B8FD58E0093B49E /* GameOverViewController.swift in Sources */,
 				D973137C2B8DFDBA0046083E /* Sounds.swift in Sources */,
 				A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */,
+				A5AB29482B8FD6F30093B49E /* GameProgressViewController.swift in Sources */,
 				A5B8954A2B8BE18200A30134 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

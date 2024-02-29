@@ -37,7 +37,7 @@ class StartScreenView: CustomView {
         let button = UIButton()
         let customTextColor = UIColor(named: "custom-mint")
         button.setTitleColor(customTextColor, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 32)
+        button.titleLabel?.font = UIFont.TextFont.Welcome.menuItem
         let underlinedString = NSAttributedString(
             string: "Правила игры",
             attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,

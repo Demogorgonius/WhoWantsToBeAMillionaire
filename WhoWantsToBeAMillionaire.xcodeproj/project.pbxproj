@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09578BA92B90C30B008F57D4 /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09578BA82B90C30B008F57D4 /* StartScreenView.swift */; };
+		09578BAB2B90CB76008F57D4 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09578BAA2B90CB76008F57D4 /* RegistrationView.swift */; };
 		09ACC9672B8FBEE100FA0CA2 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ACC9662B8FBEE100FA0CA2 /* StartScreenViewController.swift */; };
 		09ACC9692B8FBF2E00FA0CA2 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ACC9682B8FBF2E00FA0CA2 /* RegistrationViewController.swift */; };
 		A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895472B8BE18200A30134 /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		09578BA82B90C30B008F57D4 /* StartScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenView.swift; sourceTree = "<group>"; };
+		09578BAA2B90CB76008F57D4 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		09ACC9662B8FBEE100FA0CA2 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		09ACC9682B8FBF2E00FA0CA2 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		A5B895442B8BE18200A30134 /* WhoWantsToBeAMillionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoWantsToBeAMillionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				09ACC9682B8FBF2E00FA0CA2 /* RegistrationViewController.swift */,
+				09578BAA2B90CB76008F57D4 /* RegistrationView.swift */,
 			);
 			path = RegistrationViewController;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				D9CEFE0A2B8FA3320009949C /* AudioPlayer.swift in Sources */,
 				D9E769542B8DF5150096FAEC /* Images.swift in Sources */,
 				D588C67C2B8F3B1700B39884 /* Question.swift in Sources */,
+				09578BAB2B90CB76008F57D4 /* RegistrationView.swift in Sources */,
 				A5B895692B8D1BDC00A30134 /* CustomView.swift in Sources */,
 				A5B8956B2B8D1BFD00A30134 /* CustomViewController.swift in Sources */,
 				D973137C2B8DFDBA0046083E /* Sounds.swift in Sources */,

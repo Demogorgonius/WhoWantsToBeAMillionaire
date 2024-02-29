@@ -12,7 +12,7 @@ struct Question {
     var difficulty: String
     var category: String
     var question: String
-    var coorectAnswer: String
+    var corectAnswer: String
     var incorrectAnswers: [String]
     
     init(t: String, d: String, c: String, q: String, cA: String, iA: [String]) {
@@ -20,7 +20,7 @@ struct Question {
         difficulty = d
         category = c
         question = q
-        coorectAnswer = cA
+        corectAnswer = cA
         incorrectAnswers = iA
     }
     

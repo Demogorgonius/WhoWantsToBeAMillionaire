@@ -21,7 +21,7 @@ class RegistrationView: CustomView {
         button.setTitle("Регистрация", for: .normal)
         let customTextColor = UIColor(named: "custom-white")
         button.setTitleColor(customTextColor, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 24)
+        button.titleLabel?.font = UIFont.TextFont.Registration.button
         button.backgroundColor = UIColor(named: "custom-cyan")
         button.layer.cornerRadius = 10.0
         return button
@@ -38,7 +38,7 @@ class RegistrationView: CustomView {
         label.text = "Введите свой никнейм"
         let customTextColor = UIColor(named: "custom-white")
         label.textColor = customTextColor
-        label.font = UIFont(name: "Roboto-Medium", size: 24)
+        label.font = UIFont.TextFont.Registration.label
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -47,6 +47,7 @@ class RegistrationView: CustomView {
     let textField: UITextField = {
         let textField = UITextField()
         textField.placeholder = ""
+        textField.font = UIFont.TextFont.Registration.input
         textField.borderStyle = .roundedRect
         textField.layer.borderColor = UIColor(named: "custom-white")?.cgColor
         textField.layer.borderWidth = 1.0

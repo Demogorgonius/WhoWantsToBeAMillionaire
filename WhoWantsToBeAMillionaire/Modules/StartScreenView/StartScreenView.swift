@@ -53,7 +53,7 @@ class StartScreenView: CustomView {
         let button = UIButton()
         let customTextColor = UIColor(named: "custom-mint")
         button.setTitleColor(customTextColor, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 32)
+        button.titleLabel?.font = UIFont.TextFont.Welcome.menuItem
         button.titleLabel?.textAlignment = .center
         
         let underlinedString = NSAttributedString(
@@ -72,7 +72,7 @@ class StartScreenView: CustomView {
         label.text = "Welcome"
         let customTextColor = UIColor(named: "custom-white")
         label.textColor = customTextColor
-        label.font = UIFont(name: "Roboto-Regular", size: 24)
+        label.font = UIFont.TextFont.Welcome.label
         label.textAlignment = .left
         return label
     }()

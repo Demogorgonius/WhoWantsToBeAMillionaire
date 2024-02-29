@@ -23,4 +23,8 @@ struct Question {
         coorectAnswer = cA
         incorrectAnswers = iA
     }
+    
+    func getData() {
+        
+    }
 }

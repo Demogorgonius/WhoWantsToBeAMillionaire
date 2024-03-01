@@ -11,6 +11,18 @@ class RegistrationViewController: CustomViewController<RegistrationView> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        customView.delegate = self
     }
+}
+
+extension RegistrationViewController: RegistrationViewDelegate {
+    func registrationButton(didTapButton button: UIButton) {
+        
+        let gameMainViewController = GameMainViewController()
+        navigationController?.pushViewController(gameMainViewController, animated: true)
+    
+    }
+    
+    
 }
 

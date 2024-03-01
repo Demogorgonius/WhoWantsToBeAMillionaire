@@ -10,6 +10,25 @@ import SnapKit
 class StartScreenViewController: CustomViewController<StartScreenView> {
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        customView.delegate = self
     }
+}
+
+extension StartScreenViewController: StartScreenViewDelegate {
+    
+    func rulesButton(didTapButton button: UIButton) {
+        
+        let rulesController = RulesViewController()
+        navigationController?.pushViewController(rulesController, animated: true)
+    }
+    
+    func startGameButton(didTapButton button: UIButton) {
+        
+        let registrationController = RegistrationViewController()
+        navigationController?.pushViewController(registrationController, animated: true)
+    }
+    
 }

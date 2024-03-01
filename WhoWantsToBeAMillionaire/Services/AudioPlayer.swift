@@ -25,8 +25,6 @@ class AudioPlayer {
         do {
             player = try! AVAudioPlayer(contentsOf: url!)
             player?.play()
-        } catch let error {
-            print(error.localizedDescription)
         }
     }
     

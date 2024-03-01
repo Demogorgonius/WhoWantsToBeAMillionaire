@@ -8,7 +8,17 @@
 import UIKit
 import SnapKit
 
+
+protocol GameMainViewDelegate: AnyObject {
+    func gameMainView(didTapButton button: UIButton)
+}
+
 class GameMainView: CustomView {
+    
+    weak var delegate: GameMainViewDelegate?
+    weak var answerButtonDelegate: AnswerButtonViewDelegate?
+    weak var clueButtonDelegate: ClueButtonViewDelegate?
+    
     fileprivate var question: Question?
     
     private lazy var backgroundImageView = makeImageView(
@@ -135,6 +145,8 @@ class GameMainView: CustomView {
         
         configureAnswersView()
         configureCluesView()
+        
+        getMoneyButton.addTarget(self, action: #selector(didTapGetMoneyButton), for: .touchUpInside)
     }
     
     func setQuestion(_ question: Question) {
@@ -167,24 +179,12 @@ class GameMainView: CustomView {
         }
     }
 }
-// MARK: - Actions
-extension GameMainView {
-    @objc
-    private func questionAnswerHandler(_ button: UIButton) {
-        print("Button tapped")
-    }
-    
-    @objc
-    private func clueButtonHandler(_ button: UIButton) {
-        print("Button tapped")
-    }
-}
 
 extension GameMainView {
     private func configureAnswersView() {
         ["A","B","C","D"].forEach { i in
             let answerButton = AnswerButtonView(image: UIImage.ButtomImage.buttonBlue!, letter: i , text: "\(i) some var")
-            answerButton.addTarget(selector: #selector(questionAnswerHandler))
+            answerButton.delegate = answerButtonDelegate
             answersVStack.addArrangedSubview(answerButton)
         }
     }
@@ -196,7 +196,7 @@ extension GameMainView {
             UIImage.CluesImage.cluePeopleHelp
         ].forEach { image in
             let clueButton = ClueButtonView(image: image!)
-            clueButton.addTarget(selector: #selector(clueButtonHandler))
+            clueButton.delegate = clueButtonDelegate
             cluesHStack.addArrangedSubview(clueButton)
         }}
 }
@@ -231,3 +231,10 @@ extension GameMainView {
     }
 }
 
+
+
+extension GameMainView {
+    @objc func didTapGetMoneyButton(_ sender: UIButton) {
+        delegate?.gameMainView(didTapButton: sender)
+    }
+}

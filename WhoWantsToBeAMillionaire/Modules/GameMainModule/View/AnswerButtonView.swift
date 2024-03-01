@@ -8,7 +8,15 @@
 import UIKit
 import SnapKit
 
+
+protocol AnswerButtonViewDelegate: AnyObject {
+    func answerButtonView(didTapButton button: UIButton)
+}
+
 final class AnswerButtonView: UIView {
+    
+    weak var delegate: AnswerButtonViewDelegate?
+    
     private var button: UIButton = {
         let button = UIButton()
         button.backgroundColor = .clear
@@ -48,14 +56,6 @@ final class AnswerButtonView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func addTarget(selector: Selector) {
-        button.addTarget(nil, action: selector, for: .touchUpInside)
-    }
-}
-
-// MARK: - Setup Veiws
-extension AnswerButtonView {
 
     private func setViews() {
         addSubview(button)
@@ -79,5 +79,18 @@ extension AnswerButtonView {
             make.top.bottom.equalToSuperview()
             make.trailing.equalToSuperview().offset(-20)
         }
+        
+        button.addTarget(self, action: #selector(didTapAnswerButton), for: .touchUpInside)
+    }
+    
+    
+    func changeButtonState(image: UIImage) {
+        button.setBackgroundImage(image, for: .normal)
+    }
+}
+
+extension AnswerButtonView {
+    @objc func didTapAnswerButton(_ sender: UIButton) {
+        delegate?.answerButtonView(didTapButton: sender)
     }
 }

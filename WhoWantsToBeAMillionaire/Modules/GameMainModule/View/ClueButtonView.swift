@@ -8,7 +8,13 @@
 import UIKit
 import SnapKit
 
+protocol ClueButtonViewDelegate: AnyObject {
+    func clueButtonView(didTapButton button: UIButton)
+}
+
 final class ClueButtonView: UIView {
+    
+    weak var delegate: ClueButtonViewDelegate?
     
     private var button: UIButton = {
         let button = UIButton()
@@ -21,7 +27,7 @@ final class ClueButtonView: UIView {
 
     // MARK: Init
     init(image: UIImage) {
-        self.button.setImage(image, for: .normal)
+        self.button.setBackgroundImage(image, for: .normal)
         super.init(frame: .zero)
         setViews()
         layoutViews()
@@ -30,14 +36,6 @@ final class ClueButtonView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func addTarget(selector: Selector) {
-        button.addTarget(nil, action: selector, for: .touchUpInside)
-    }
-}
-
-// MARK: - Setup Veiws
-extension ClueButtonView {
 
     private func setViews() {
         addSubview(button)
@@ -49,5 +47,17 @@ extension ClueButtonView {
             make.height.equalTo(80)
             make.width.equalTo(100)
         }
+        
+        button.addTarget(self, action: #selector(didTapClueButton), for: .touchUpInside)
+    }
+    
+    func changeButtonState(image: UIImage) {
+        button.setBackgroundImage(image, for: .normal)
+    }
+}
+
+extension ClueButtonView {
+    @objc func didTapClueButton(_ sender: UIButton) {
+        delegate?.clueButtonView(didTapButton: sender)
     }
 }

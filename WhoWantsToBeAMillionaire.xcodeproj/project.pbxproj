@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09578BA92B90C30B008F57D4 /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09578BA82B90C30B008F57D4 /* StartScreenView.swift */; };
+		09578BAB2B90CB76008F57D4 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09578BAA2B90CB76008F57D4 /* RegistrationView.swift */; };
+		09ACC9672B8FBEE100FA0CA2 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ACC9662B8FBEE100FA0CA2 /* StartScreenViewController.swift */; };
+		09ACC9692B8FBF2E00FA0CA2 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ACC9682B8FBF2E00FA0CA2 /* RegistrationViewController.swift */; };
+		09E3DCE42B90F04500C73649 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E3DCE32B90F04500C73649 /* RulesViewController.swift */; };
+		09E3DCE62B90F07400C73649 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E3DCE52B90F07400C73649 /* RulesView.swift */; };
 		A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895472B8BE18200A30134 /* AppDelegate.swift */; };
 		A5B8954A2B8BE18200A30134 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895492B8BE18200A30134 /* SceneDelegate.swift */; };
 		A5B895512B8BE18300A30134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B895502B8BE18300A30134 /* Assets.xcassets */; };
@@ -59,6 +65,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09578BA82B90C30B008F57D4 /* StartScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenView.swift; sourceTree = "<group>"; };
+		09578BAA2B90CB76008F57D4 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		09ACC9662B8FBEE100FA0CA2 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
+		09ACC9682B8FBF2E00FA0CA2 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		09E3DCE32B90F04500C73649 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
+		09E3DCE52B90F07400C73649 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		A5B895442B8BE18200A30134 /* WhoWantsToBeAMillionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoWantsToBeAMillionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B895472B8BE18200A30134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B895492B8BE18200A30134 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +135,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09ACC9632B8FBE9000FA0CA2 /* StartScreenView */ = {
+			isa = PBXGroup;
+			children = (
+				09578BA82B90C30B008F57D4 /* StartScreenView.swift */,
+				09ACC9662B8FBEE100FA0CA2 /* StartScreenViewController.swift */,
+			);
+			path = StartScreenView;
+			sourceTree = "<group>";
+		};
+		09ACC9652B8FBEAE00FA0CA2 /* RegistrationView */ = {
+			isa = PBXGroup;
+			children = (
+				09ACC9682B8FBF2E00FA0CA2 /* RegistrationViewController.swift */,
+				09578BAA2B90CB76008F57D4 /* RegistrationView.swift */,
+			);
+			path = RegistrationView;
+			sourceTree = "<group>";
+		};
+		09E3DCE22B90EC0900C73649 /* RulesView */ = {
+			isa = PBXGroup;
+			children = (
+				09E3DCE32B90F04500C73649 /* RulesViewController.swift */,
+				09E3DCE52B90F07400C73649 /* RulesView.swift */,
+			);
+			path = RulesView;
+			sourceTree = "<group>";
+		};
 		A5B8953B2B8BE18200A30134 = {
 			isa = PBXGroup;
 			children = (
@@ -164,10 +203,13 @@
 		A5B8955C2B8BE1C400A30134 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D9550A5F2B8FBDFC0018AA2C /* GameMainModule */,
+				09E3DCE22B90EC0900C73649 /* RulesView */,
+				09ACC9652B8FBEAE00FA0CA2 /* RegistrationView */,
+				09ACC9632B8FBE9000FA0CA2 /* StartScreenView */,
 				A5B895602B8BE25800A30134 /* MainModule */,
 				AD0799E02B8F335000AEFFE7 /* QustionsModule */,
 				AD0799DA2B8E8E4100AEFFE7 /* GameOverModule */,
+                D9550A5F2B8FBDFC0018AA2C /* GameMainModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -445,11 +487,15 @@
 				D96B366C2B8FF7200094DCA1 /* AnswerButtonView.swift in Sources */,
 				D973137E2B8DFE930046083E /* Fonts.swift in Sources */,
 				A5B895642B8BE28900A30134 /* MainViewController.swift in Sources */,
+				09578BA92B90C30B008F57D4 /* StartScreenView.swift in Sources */,
+				09ACC9672B8FBEE100FA0CA2 /* StartScreenViewController.swift in Sources */,
+				09ACC9692B8FBF2E00FA0CA2 /* RegistrationViewController.swift in Sources */,
 				D588C67E2B8F3DC100B39884 /* QuestionsAPI.swift in Sources */,
 				D9CEFE0A2B8FA3320009949C /* AudioPlayer.swift in Sources */,
 				D9550A652B8FE3E10018AA2C /* GameMainViewController.swift in Sources */,
 				D9E769542B8DF5150096FAEC /* Images.swift in Sources */,
 				D588C67C2B8F3B1700B39884 /* Question.swift in Sources */,
+				09578BAB2B90CB76008F57D4 /* RegistrationView.swift in Sources */,
 				A5B895692B8D1BDC00A30134 /* CustomView.swift in Sources */,
 				AD0799E62B8F691E00AEFFE7 /* QuestionView.swift in Sources */,
 				AD0799EA2B8F748300AEFFE7 /* QuestionHelper.swift in Sources */,
@@ -459,6 +505,8 @@
 				D973137C2B8DFDBA0046083E /* Sounds.swift in Sources */,
 				AD0799E42B8F33F800AEFFE7 /* QuestionsView.swift in Sources */,
 				A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */,
+				09E3DCE42B90F04500C73649 /* RulesViewController.swift in Sources */,
+				09E3DCE62B90F07400C73649 /* RulesView.swift in Sources */,
 				A5B8954A2B8BE18200A30134 /* SceneDelegate.swift in Sources */,
 				AD0799DD2B8E8E8200AEFFE7 /* GameOverViewController.swift in Sources */,
 			);
@@ -604,11 +652,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TWQL7PLAUC;
+				DEVELOPMENT_TEAM = GT292Y33C6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhoWantsToBeAMillionaire/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -636,11 +684,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = TWQL7PLAUC;
+				DEVELOPMENT_TEAM = GT292Y33C6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WhoWantsToBeAMillionaire/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

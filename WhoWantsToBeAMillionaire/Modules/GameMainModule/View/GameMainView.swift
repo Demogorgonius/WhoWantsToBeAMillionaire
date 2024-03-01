@@ -52,6 +52,7 @@ class GameMainView: CustomView {
         font: UIFont.TextFont.Question.label,
         textColor: .customWhite
     )
+    
     private lazy var getMoneyButton: UIButton = {
         let button = UIButton()
         
@@ -177,6 +178,10 @@ class GameMainView: CustomView {
                 button.setTitle(localAnswers.removeLast(), for: .normal)
             }
         }
+    }
+    
+    func updateTimerLabel(_ value: Int) {
+        timerLabel.text = String(value)
     }
 }
 

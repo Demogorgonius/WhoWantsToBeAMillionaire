@@ -25,4 +25,12 @@ struct QuestionsAPI {
         Question(t: "multiple", d: "medium", c: "General Knowledge", q: "What is the star sign of someone born on Valentines day?", cA: "Aquarius", iA: ["Pisces", "Capricorn", "Scorpio"]),
         Question(t: "multiple", d: "medium", c: "General Knowledge", q: "Earl Grey tea is black tea flavoured with what?", cA: "Bergamot oil", iA: ["Lavender", "Vanilla", "Honey"])
     ]
+    
+    func fetchData() -> [Question] {
+
+            return quiz
+
+        }
+
 }
+

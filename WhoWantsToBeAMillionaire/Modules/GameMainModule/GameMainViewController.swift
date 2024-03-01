@@ -13,8 +13,8 @@ final class GameMainViewController: CustomViewController<GameMainView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        customView.answerButtonDelegate = self
-        customView.clueButtonDelegate = self
+        customView.answerButton?.delegate = self
+        customView.clueButton?.delegate = self
         customView.delegate = self
 
     }

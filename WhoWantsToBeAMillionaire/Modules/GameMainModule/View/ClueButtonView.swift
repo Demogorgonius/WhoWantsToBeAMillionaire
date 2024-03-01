@@ -44,8 +44,6 @@ final class ClueButtonView: UIView {
     private func layoutViews() {
         button.snp.makeConstraints { make in
             make.bottom.top.left.right.equalToSuperview()
-            make.height.equalTo(80)
-            make.width.equalTo(100)
         }
         
         button.addTarget(self, action: #selector(didTapClueButton), for: .touchUpInside)

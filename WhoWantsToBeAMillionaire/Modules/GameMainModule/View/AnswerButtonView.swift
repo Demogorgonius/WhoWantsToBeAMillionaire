@@ -44,8 +44,8 @@ final class AnswerButtonView: UIView {
 
 
     // MARK: Init
-    init(image: UIImage, letter: String, text: String) {
-        self.button.setBackgroundImage(image, for: .normal)
+    init(image: UIImage?, letter: String, text: String) {
+        self.button.setBackgroundImage(image ?? UIImage(), for: .normal)
         self.answerLetterLabel.text = letter
         self.answerTextLabel.text = text
         super.init(frame: .zero)

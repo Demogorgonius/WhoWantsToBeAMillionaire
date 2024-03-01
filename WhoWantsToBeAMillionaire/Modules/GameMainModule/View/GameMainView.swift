@@ -14,10 +14,9 @@ protocol GameMainViewDelegate: AnyObject {
 }
 
 class GameMainView: CustomView {
-    
+    var answerButton: AnswerButtonView?
+    var clueButton: ClueButtonView?
     weak var delegate: GameMainViewDelegate?
-    weak var answerButtonDelegate: AnswerButtonViewDelegate?
-    weak var clueButtonDelegate: ClueButtonViewDelegate?
     
     fileprivate var question: Question?
     
@@ -122,9 +121,8 @@ class GameMainView: CustomView {
         
         answersVStack.snp.makeConstraints { make in
             make.top.equalTo(questionNumberLabel.snp.bottom).offset(30)
-            make.left.equalTo(safeAreaLayoutGuide.snp.left).offset(10)
-            make.leading.equalToSuperview().offset(34)
-            make.trailing.equalToSuperview().offset(-34)
+            make.left.equalTo(safeAreaLayoutGuide.snp.left).offset(30)
+            make.centerX.equalTo(self)
         }
         
         timerLabel.snp.makeConstraints { make in
@@ -140,8 +138,7 @@ class GameMainView: CustomView {
         
         cluesHStack.snp.makeConstraints { make in
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-50)
-            make.leading.equalToSuperview().offset(34)
-            make.trailing.equalToSuperview().offset(-34)
+            make.centerX.equalTo(self)
         }
         
         configureAnswersView()
@@ -188,9 +185,9 @@ class GameMainView: CustomView {
 extension GameMainView {
     private func configureAnswersView() {
         ["A","B","C","D"].forEach { i in
-            let answerButton = AnswerButtonView(image: UIImage.ButtomImage.buttonBlue!, letter: i , text: "\(i) some var")
-            answerButton.delegate = answerButtonDelegate
-            answersVStack.addArrangedSubview(answerButton)
+            answerButton = AnswerButtonView(image: UIImage.ButtomImage.buttonBlue!, letter: i , text: "\(i) some var")
+            answerButton?.delegate = self
+            answersVStack.addArrangedSubview(answerButton!)
         }
     }
     
@@ -200,9 +197,9 @@ extension GameMainView {
             UIImage.CluesImage.clueCall,
             UIImage.CluesImage.cluePeopleHelp
         ].forEach { image in
-            let clueButton = ClueButtonView(image: image!)
-            clueButton.delegate = clueButtonDelegate
-            cluesHStack.addArrangedSubview(clueButton)
+            clueButton = ClueButtonView(image: image!)
+            clueButton?.delegate = self
+            cluesHStack.addArrangedSubview(clueButton!)
         }}
 }
 
@@ -241,5 +238,18 @@ extension GameMainView {
 extension GameMainView {
     @objc func didTapGetMoneyButton(_ sender: UIButton) {
         delegate?.gameMainView(didTapButton: sender)
+    }
+}
+
+extension GameMainView: AnswerButtonViewDelegate {
+    func answerButtonView(didTapButton button: UIButton) {
+        answerButton?.didTapAnswerButton(button)
+    }
+    
+}
+
+extension GameMainView: ClueButtonViewDelegate {
+    func clueButtonView(didTapButton button: UIButton) {
+        clueButton?.didTapClueButton(button)
     }
 }

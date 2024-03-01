@@ -14,10 +14,11 @@ protocol GameMainViewDelegate: AnyObject {
 }
 
 class GameMainView: CustomView {
-    
+    var answerButton: AnswerButtonView?
     weak var delegate: GameMainViewDelegate?
     weak var answerButtonDelegate: AnswerButtonViewDelegate?
     weak var clueButtonDelegate: ClueButtonViewDelegate?
+    
     
     fileprivate var question: Question?
     
@@ -188,9 +189,13 @@ class GameMainView: CustomView {
 extension GameMainView {
     private func configureAnswersView() {
         ["A","B","C","D"].forEach { i in
-            let answerButton = AnswerButtonView(image: UIImage.ButtomImage.buttonBlue!, letter: i , text: "\(i) some var")
-            answerButton.delegate = answerButtonDelegate
-            answersVStack.addArrangedSubview(answerButton)
+            
+            answerButton = AnswerButtonView(image: UIImage.ButtomImage.buttonBlue!,
+                                            letter: i ,
+                                            text: "\(i) some var",
+                                            tag: i)
+            answerButton?.delegate = self
+            answersVStack.addArrangedSubview(answerButton!)
         }
     }
     
@@ -241,5 +246,11 @@ extension GameMainView {
 extension GameMainView {
     @objc func didTapGetMoneyButton(_ sender: UIButton) {
         delegate?.gameMainView(didTapButton: sender)
+    }
+}
+
+extension GameMainView: AnswerButtonViewDelegate {
+    func answerButtonView(didTapButton button: UIButton) {
+        answerButton?.didTapAnswerButton(button)
     }
 }

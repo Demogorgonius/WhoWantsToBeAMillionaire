@@ -8,12 +8,13 @@
 import UIKit
 
 final class GameMainViewController: CustomViewController<GameMainView> {
+    
+    
 
     //MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        customView.answerButtonDelegate = self
+        customView.answerButton?.delegate = self
         customView.clueButtonDelegate = self
         customView.delegate = self
 

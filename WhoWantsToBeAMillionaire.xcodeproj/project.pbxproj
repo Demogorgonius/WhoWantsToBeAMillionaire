@@ -13,6 +13,7 @@
 		09ACC9692B8FBF2E00FA0CA2 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ACC9682B8FBF2E00FA0CA2 /* RegistrationViewController.swift */; };
 		09E3DCE42B90F04500C73649 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E3DCE32B90F04500C73649 /* RulesViewController.swift */; };
 		09E3DCE62B90F07400C73649 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E3DCE52B90F07400C73649 /* RulesView.swift */; };
+		A5AB295C2B925E4D0093B49E /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB295B2B925E4D0093B49E /* GameService.swift */; };
 		A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895472B8BE18200A30134 /* AppDelegate.swift */; };
 		A5B8954A2B8BE18200A30134 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895492B8BE18200A30134 /* SceneDelegate.swift */; };
 		A5B895512B8BE18300A30134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B895502B8BE18300A30134 /* Assets.xcassets */; };
@@ -27,7 +28,7 @@
 		AD0799E42B8F33F800AEFFE7 /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0799E32B8F33F800AEFFE7 /* QuestionsView.swift */; };
 		AD0799E62B8F691E00AEFFE7 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0799E52B8F691E00AEFFE7 /* QuestionView.swift */; };
 		AD0799EA2B8F748300AEFFE7 /* QuestionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0799E92B8F748300AEFFE7 /* QuestionHelper.swift */; };
-	 	D588C67C2B8F3B1700B39884 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588C67B2B8F3B1700B39884 /* Question.swift */; };
+		D588C67C2B8F3B1700B39884 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588C67B2B8F3B1700B39884 /* Question.swift */; };
 		D588C67E2B8F3DC100B39884 /* QuestionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588C67D2B8F3DC100B39884 /* QuestionsAPI.swift */; };
 		D9550A622B8FDFB10018AA2C /* GameMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9550A612B8FDFB10018AA2C /* GameMainView.swift */; };
 		D9550A652B8FE3E10018AA2C /* GameMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9550A642B8FE3E10018AA2C /* GameMainViewController.swift */; };
@@ -71,6 +72,7 @@
 		09ACC9682B8FBF2E00FA0CA2 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		09E3DCE32B90F04500C73649 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		09E3DCE52B90F07400C73649 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
+		A5AB295B2B925E4D0093B49E /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		A5B895442B8BE18200A30134 /* WhoWantsToBeAMillionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoWantsToBeAMillionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B895472B8BE18200A30134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B895492B8BE18200A30134 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -209,7 +211,7 @@
 				A5B895602B8BE25800A30134 /* MainModule */,
 				AD0799E02B8F335000AEFFE7 /* QustionsModule */,
 				AD0799DA2B8E8E4100AEFFE7 /* GameOverModule */,
-                D9550A5F2B8FBDFC0018AA2C /* GameMainModule */,
+				D9550A5F2B8FBDFC0018AA2C /* GameMainModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				D9CEFE092B8FA3320009949C /* AudioPlayer.swift */,
+				A5AB295B2B925E4D0093B49E /* GameService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				D588C67C2B8F3B1700B39884 /* Question.swift in Sources */,
 				09578BAB2B90CB76008F57D4 /* RegistrationView.swift in Sources */,
 				A5B895692B8D1BDC00A30134 /* CustomView.swift in Sources */,
+				A5AB295C2B925E4D0093B49E /* GameService.swift in Sources */,
 				AD0799E62B8F691E00AEFFE7 /* QuestionView.swift in Sources */,
 				AD0799EA2B8F748300AEFFE7 /* QuestionHelper.swift in Sources */,
 				A5B8956B2B8D1BFD00A30134 /* CustomViewController.swift in Sources */,

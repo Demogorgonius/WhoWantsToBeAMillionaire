@@ -24,8 +24,11 @@ struct Question {
         incorrectAnswers = iA
     }
     
-    func getAnswers() -> [String] {
-        var answers = [correctAnswer] + incorrectAnswers
-        return answers.shuffled()
+    func getData() {
+        
     }
+    func getAnswers() -> [String] {
+            var answers = [correctAnswer] + incorrectAnswers
+            return answers.shuffled()
+        }
 }

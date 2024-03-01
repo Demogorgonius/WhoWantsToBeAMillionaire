@@ -8,6 +8,7 @@
 import Foundation
 
 struct QuestionsAPI {
+    
     let quiz = [
         Question(t: "multiple", d: "medium", c: "General Knowledge", q: "In the Morse code, which letter is indicated by 3 dots? ", cA: "S", iA: ["O", "A", "C"]),
         Question(t: "multiple", d: "medium", c: "General Knowledge", q: "Which of the following carbonated soft drinks were introduced first?", cA: "Dr. Pepper", iA: ["Coca-Cola", "Sprite", "Mountain Dew"]),
@@ -26,7 +27,11 @@ struct QuestionsAPI {
         Question(t: "multiple", d: "medium", c: "General Knowledge", q: "Earl Grey tea is black tea flavoured with what?", cA: "Bergamot oil", iA: ["Lavender", "Vanilla", "Honey"])
     ]
     
-
+    func fetchData() -> [Question] {
+        
+        return quiz
+        
+    }
 //    func getQuestion(number: Int) -> String {
 //        return quiz[number].question
 //    }

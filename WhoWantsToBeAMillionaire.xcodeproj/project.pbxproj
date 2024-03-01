@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5AB29532B91255B0093B49E /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB29522B91255B0093B49E /* SecondVC.swift */; };
 		A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895472B8BE18200A30134 /* AppDelegate.swift */; };
 		A5B8954A2B8BE18200A30134 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895492B8BE18200A30134 /* SceneDelegate.swift */; };
 		A5B895512B8BE18300A30134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B895502B8BE18300A30134 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5AB29522B91255B0093B49E /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		A5B895442B8BE18200A30134 /* WhoWantsToBeAMillionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoWantsToBeAMillionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B895472B8BE18200A30134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B895492B8BE18200A30134 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5AB29512B9125400093B49E /* SecondVC */ = {
+			isa = PBXGroup;
+			children = (
+				A5AB29522B91255B0093B49E /* SecondVC.swift */,
+			);
+			path = SecondVC;
+			sourceTree = "<group>";
+		};
 		A5B8953B2B8BE18200A30134 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +156,7 @@
 		A5B8955C2B8BE1C400A30134 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				A5AB29512B9125400093B49E /* SecondVC */,
 				A5B895602B8BE25800A30134 /* MainModule */,
 			);
 			path = Modules;
@@ -358,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D588C67E2B8F3DC100B39884 /* QuestionsAPI.swift in Sources */,
+				A5AB29532B91255B0093B49E /* SecondVC.swift in Sources */,
 				D973137E2B8DFE930046083E /* Fonts.swift in Sources */,
 				A5B895642B8BE28900A30134 /* MainViewController.swift in Sources */,
 				D51C64FA2B905781002F6EE1 /* GameService.swift in Sources */,

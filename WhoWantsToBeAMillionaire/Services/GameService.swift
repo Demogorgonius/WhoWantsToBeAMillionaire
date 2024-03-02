@@ -25,6 +25,7 @@ enum ClueType {
     case fifty
     case call
     case help
+    case oneError
 }
 
 
@@ -37,6 +38,7 @@ protocol GameServiceViewProtocol: AnyObject {
     func fiftyClue(answer: [String])
     func callClue(answer: Int)
     func helpClue(answer: [Int])
+    func oneErrorClue(used: Bool)
     
 }
 
@@ -47,8 +49,8 @@ class GameService {
     var questionApi = QuestionsAPI()
     var currentQuestionIndex: Int = 0
     var currentQuestion: GameQuestion?
-    var rightToError: Bool = true
-    
+    var clues = [Clues.callIsAvailable: true, Clues.fiftyIsAvailable: true, Clues.helpIsAvailable: true, Clues.rightToErrorIsAvailable: true]
+
     init() {
         questions = questionApi.fetchData()
     }
@@ -116,6 +118,7 @@ class GameService {
             guard let currentQuestion else { return }
             let indexTrueAnswer = currentQuestion.trueAnswer
             var indexCall = 0
+            
             if Int.random(in: 1...5) != 5 {
                 indexCall = indexTrueAnswer
             } else if indexTrueAnswer == 0 {
@@ -136,8 +139,26 @@ class GameService {
                 }
             }
             view.helpClue(answer: percentageGetHelp)
+        case .oneError:
+            
+            rightToError = false
+            view.oneErrorClue(used: true)
         }
-        
+    }
+    
+    func getOneErrorClue(answerIndex: Int?) {
+        guard let currentQuestion else { return }
+        var answerArray = currentQuestion.answer
+        for  index in 0...3 {
+            
+            if index == currentQuestion.trueAnswer && delCount < 2 {
+                
+                if Bool.random() {
+                    answerArray[index] = ""
+                    delCount += 1
+                }
+            }
+        }
     }
 }
 

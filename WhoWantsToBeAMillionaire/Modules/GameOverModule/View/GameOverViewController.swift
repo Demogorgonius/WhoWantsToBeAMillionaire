@@ -18,6 +18,7 @@ final class GameOverViewController: CustomViewController<GameOverView> {
     
     private func commonInit() {
         customView.delegate = self
+        customView.configure(attemptsCount: 3)
     }
 }
 

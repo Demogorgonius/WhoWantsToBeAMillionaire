@@ -41,6 +41,11 @@ final class GameOverView: CustomView {
     
     private lazy var playAgainButton = makeButton()
     
+    // MARK: Configure Method
+    func configure(attemptsCount value: Int) {
+        attemptTitleLabel.text = "You losed on \(value) attempt"
+    }
+    
     // MARK: Set Views
     override func setViews() {
         [backgroundImageView, logoImageView,

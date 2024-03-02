@@ -168,7 +168,7 @@ class GameMainView: CustomView {
         questionNumberLabel.text = "Вопрос \(String(number))"
     }
     
-    private func setQuestionAnswers(_ answers: [String]) {
+    func setQuestionAnswers(_ answers: [String]) {
         for view in answersVStack.subviews {
             if let button = view as? AnswerButtonView {
                 var localAnswers = answers
@@ -200,6 +200,10 @@ class GameMainView: CustomView {
         
         getMoneyButton.isEnabled = false
     }
+    
+    func disableClue(_ clue: ClueTypes) {
+        print("\(clue) disable")
+    }
 }
 
 extension GameMainView {
@@ -213,21 +217,10 @@ extension GameMainView {
     
     private func configureCluesView() {
         ClueTypes.allCases.forEach { clue in
-            print("outside \(clue)")
             clueButton = ClueButtonView(clue)
             clueButton?.delegate = self
-//            clueButton?.clue = clue
             cluesHStack.addArrangedSubview(clueButton!)
         }}
-//        [
-//            UIImage.CluesImage.clueFiftyPercent,
-//            UIImage.CluesImage.clueFiftyPercent,
-//            UIImage.CluesImage.cluePeopleHelp
-//        ].forEach { image in
-//            clueButton = ClueButtonView(image: image!, value)
-//            clueButton?.delegate = self
-//            cluesHStack.addArrangedSubview(clueButton!)
-//        }}
 }
 
 

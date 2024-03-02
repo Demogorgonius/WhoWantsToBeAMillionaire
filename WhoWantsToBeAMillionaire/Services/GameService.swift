@@ -26,9 +26,9 @@ protocol GameServiceViewProtocol: AnyObject {
     func correctAnswerSelect()
     func getMoneySelect()
     func incorrectAnswerSelect()
-    func fiftyClue(answer: [String])
+    func fiftyClue(answers: [String])
     func callClue(answer: Int)
-    func helpClue(answer: [Int])
+    func helpClue(answers: [Int])
     func oneErrorClue(used: Bool)
     
 }
@@ -110,7 +110,7 @@ class GameService {
                 }
             }
             clues[ClueTypes.fifty] = false
-//            view.fiftyClue(answer: answerArray)
+            view.fiftyClue(answers: answerArray)
         case .call:
             guard let currentQuestion else { return }
             let indexTrueAnswer = currentQuestion.trueAnswer
@@ -123,23 +123,23 @@ class GameService {
             }
             
             clues[ClueTypes.call] = false
-//            view.callClue(answer: indexCall)
+            view.callClue(answer: indexCall)
         case .help:
-//            guard let currentQuestion else { return }
+            guard let currentQuestion else { return }
             var percentageGetHelp: [Int] = []
-//            let indexTrueAnswer = currentQuestion.trueAnswer
-//            percentageGetHelp[indexTrueAnswer] = 100
-//            for index in 0...3 {
-//                
-//                if index != indexTrueAnswer {
-//                    
-//                    percentageGetHelp[index] = Int.random(in: 0..<15)
-//                    percentageGetHelp[indexTrueAnswer] -= percentageGetHelp[index]
-//                }
-//            }
+            let indexTrueAnswer = currentQuestion.trueAnswer
+            percentageGetHelp[indexTrueAnswer] = 100
+            for index in 0...3 {
+                
+                if index != indexTrueAnswer {
+                    
+                    percentageGetHelp[index] = Int.random(in: 0..<15)
+                    percentageGetHelp[indexTrueAnswer] -= percentageGetHelp[index]
+                }
+            }
             
             clues[ClueTypes.help] = false
-//            view.helpClue(answer: percentageGetHelp)
+            view.helpClue(answers: percentageGetHelp)
 //        case .oneError:
 //            
 //            rightToError = false

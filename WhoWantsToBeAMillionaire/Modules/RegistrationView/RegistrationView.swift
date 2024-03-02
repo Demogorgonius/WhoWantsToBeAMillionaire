@@ -7,7 +7,14 @@
 
 import UIKit
 import SnapKit
+
+
+protocol RegistrationViewDelegate: AnyObject {
+    func registrationButton(didTapButton button: UIButton)
+}
+
 class RegistrationView: CustomView {
+    weak var delegate: RegistrationViewDelegate?
     
     // Mark: - Views
     let backgroundImageView: UIImageView = {
@@ -95,5 +102,15 @@ class RegistrationView: CustomView {
             $0.width.equalTo(261)
             $0.height.equalTo(47)
         }
+        
+        registrationButton.addTarget(self, action: #selector(didTapRegistrationButton), for: .touchUpInside)
     }
 }
+
+
+extension RegistrationView {
+    @objc func didTapRegistrationButton(_ sender: UIButton) {
+        delegate?.registrationButton(didTapButton: sender)
+    }
+}
+

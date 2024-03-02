@@ -11,16 +11,24 @@ struct Question {
     var type: String
     var difficulty: String
     var category: String
-    var question: String
-    var coorectAnswer: String
+    var text: String
+    var correctAnswer: String
     var incorrectAnswers: [String]
     
     init(t: String, d: String, c: String, q: String, cA: String, iA: [String]) {
         type = t
         difficulty = d
         category = c
-        question = q
-        coorectAnswer = cA
+        text = q
+        correctAnswer = cA
         incorrectAnswers = iA
     }
+    
+    func getData() {
+        
+    }
+    func getAnswers() -> [String] {
+            var answers = [correctAnswer] + incorrectAnswers
+            return answers.shuffled()
+        }
 }

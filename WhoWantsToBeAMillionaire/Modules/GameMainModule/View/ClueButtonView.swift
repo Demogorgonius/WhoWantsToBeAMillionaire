@@ -51,10 +51,6 @@ final class ClueButtonView: UIView {
         button.addTarget(self, action: #selector(didTapClueButton), for: .touchUpInside)
     }
     
-    func changeButtonState(image: UIImage) {
-        button.setBackgroundImage(image, for: .normal)
-    }
-    
     func disable(_ state: Bool) {
         button.isEnabled = state
     }

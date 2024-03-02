@@ -34,7 +34,7 @@ final class AnswerButtonView: UIView {
         return label
     }()
 
-    private let answerTextLabel: UILabel = {
+    let answerTextLabel: UILabel = {
         let label = UILabel()
         label.text = ""
         label.font =  UIFont.TextFont.Buttons.answerButtonText
@@ -96,6 +96,8 @@ final class AnswerButtonView: UIView {
     func disable(_ state: Bool) {
         button.isEnabled = state
     }
+    
+    
 }
 
 extension AnswerButtonView {

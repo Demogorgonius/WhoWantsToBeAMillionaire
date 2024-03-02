@@ -87,6 +87,14 @@ final class AnswerButtonView: UIView {
     func changeButtonState(image: UIImage) {
         button.setBackgroundImage(image, for: .normal)
     }
+    
+    func setAnswerTextLabel(_ text: String) {
+        answerTextLabel.text = text
+    }
+    
+    func disable() {
+        button.isEnabled = false
+    }
 }
 
 extension AnswerButtonView {

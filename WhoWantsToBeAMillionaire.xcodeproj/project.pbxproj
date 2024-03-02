@@ -36,6 +36,7 @@
 		D96B366E2B8FF7340094DCA1 /* ClueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B366D2B8FF7340094DCA1 /* ClueButtonView.swift */; };
 		D973137C2B8DFDBA0046083E /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973137B2B8DFDBA0046083E /* Sounds.swift */; };
 		D973137E2B8DFE930046083E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973137D2B8DFE930046083E /* Fonts.swift */; };
+		D9B3E5782B935BA500E44677 /* GameMusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3E5772B935BA500E44677 /* GameMusicService.swift */; };
 		D9CEFE0A2B8FA3320009949C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEFE092B8FA3320009949C /* AudioPlayer.swift */; };
 		D9E7691F2B8D437E0096FAEC /* button-gold.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E769042B8D437D0096FAEC /* button-gold.png */; };
 		D9E769202B8D437E0096FAEC /* clue-call-used.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E769052B8D437D0096FAEC /* clue-call-used.png */; };
@@ -96,6 +97,7 @@
 		D96B366D2B8FF7340094DCA1 /* ClueButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueButtonView.swift; sourceTree = "<group>"; };
 		D973137B2B8DFDBA0046083E /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		D973137D2B8DFE930046083E /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		D9B3E5772B935BA500E44677 /* GameMusicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMusicService.swift; sourceTree = "<group>"; };
 		D9CEFE092B8FA3320009949C /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		D9E769042B8D437D0096FAEC /* button-gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-gold.png"; sourceTree = "<group>"; };
 		D9E769052B8D437D0096FAEC /* clue-call-used.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clue-call-used.png"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				D9CEFE092B8FA3320009949C /* AudioPlayer.swift */,
+				D9B3E5772B935BA500E44677 /* GameMusicService.swift */,
 				A5AB295B2B925E4D0093B49E /* GameService.swift */,
 			);
 			path = Services;
@@ -494,6 +497,7 @@
 				09ACC9672B8FBEE100FA0CA2 /* StartScreenViewController.swift in Sources */,
 				09ACC9692B8FBF2E00FA0CA2 /* RegistrationViewController.swift in Sources */,
 				D588C67E2B8F3DC100B39884 /* QuestionsAPI.swift in Sources */,
+				D9B3E5782B935BA500E44677 /* GameMusicService.swift in Sources */,
 				D9CEFE0A2B8FA3320009949C /* AudioPlayer.swift in Sources */,
 				D9550A652B8FE3E10018AA2C /* GameMainViewController.swift in Sources */,
 				D9E769542B8DF5150096FAEC /* Images.swift in Sources */,

@@ -114,7 +114,6 @@ class GameService {
             view.fiftyClue(answer: answerArray)
         case .call:
             guard let currentQuestion else { return }
-            var answerArray = currentQuestion.answer
             let indexTrueAnswer = currentQuestion.trueAnswer
             var indexCall = 0
             if Int.random(in: 1...5) != 5 {
@@ -125,7 +124,6 @@ class GameService {
             view.callClue(answer: indexCall)
         case .help:
             guard let currentQuestion else { return }
-            var answerArray = currentQuestion.answer
             var percentageGetHelp: [Int] = []
             let indexTrueAnswer = currentQuestion.trueAnswer
             percentageGetHelp[indexTrueAnswer] = 100

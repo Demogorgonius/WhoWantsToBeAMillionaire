@@ -12,7 +12,7 @@ class AudioPlayer {
     private var player: AVAudioPlayer!
     
     private func getURL(_ name: String) -> URL? {
-        guard let path = Bundle.main.path(forResource: "beep", ofType:"mp3") else { return nil }
+        guard let path = Bundle.main.path(forResource: name, ofType:"mp3") else { return nil }
         return URL(fileURLWithPath: path)
     }
     

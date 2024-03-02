@@ -22,11 +22,13 @@ final class GameMainViewController: CustomViewController<GameMainView> {
         customView.clueButton?.delegate = self
         customView.delegate = self
         gameService.view = self
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        getQuestion()
         waitForAnswer()
     }
     
@@ -62,6 +64,14 @@ final class GameMainViewController: CustomViewController<GameMainView> {
         let progressController = QuestionsViewController()
         navigationController?.pushViewController(progressController, animated: true)
     }
+    
+    func getQuestion() {
+        let getQuestion = gameService.getQuestion()
+        customView.setQuestion(getQuestion)
+        print("\(getQuestion)")
+       
+    }
+    
 }
 
 extension GameMainViewController: ClueButtonViewDelegate {
@@ -130,3 +140,4 @@ extension GameMainViewController: GameServiceViewProtocol {
     
     
 }
+

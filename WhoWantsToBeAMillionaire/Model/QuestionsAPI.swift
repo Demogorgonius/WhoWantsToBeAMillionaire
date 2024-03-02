@@ -9,7 +9,7 @@ import Foundation
 
 struct QuestionsAPI {
     let quiz = [
-        Question(t: "multiple", d: "medium", c: "General Knowledge", q: "In the Morse code, which letter is indicated by 3 dots? ", cA: "S", iA: ["O", "A", "C"]),
+        Question(t: "multiple", d: "medium", c: "General Knowledge", q: "In the Morse code, which letter is indicated by 3 dots? ", cA: "'S'", iA: ["'O'", "'A'", "'C'"]),
         Question(t: "multiple", d: "medium", c: "General Knowledge", q: "Which of the following carbonated soft drinks were introduced first?", cA: "Dr. Pepper", iA: ["Coca-Cola", "Sprite", "Mountain Dew"]),
         Question(t: "multiple", d: "medium", c: "General Knowledge", q: "Whose greyscale face is on the kappa emoticon on Twitch?", cA: "Josh DeSeno", iA: ["Justin DeSeno", "John DeSeno", "Jimmy DeSeno"]),
         Question(t: "multiple", d: "medium", c: "General Knowledge", q: "Directly between the Washington Monument and the Reflecting Pool is a memorial to which war?", cA: "World War II", iA: ["Vietnam War", "American Civil War", "American Revolutionary War"]),

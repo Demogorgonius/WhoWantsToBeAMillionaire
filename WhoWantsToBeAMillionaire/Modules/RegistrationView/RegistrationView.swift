@@ -80,7 +80,7 @@ class RegistrationView: CustomView {
             $0.edges.equalToSuperview()
         }
         logoImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(40)
+            $0.top.equalToSuperview().offset(65)
             $0.centerX.equalToSuperview()
             $0.width.height.equalTo(201)
         }

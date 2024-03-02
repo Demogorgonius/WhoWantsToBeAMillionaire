@@ -139,7 +139,6 @@ class GameService {
 //            }
             
             clues[ClueTypes.help] = false
-            print("\(clues)")
 //            view.helpClue(answer: percentageGetHelp)
 //        case .oneError:
 //            

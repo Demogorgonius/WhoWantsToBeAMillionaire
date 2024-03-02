@@ -39,6 +39,7 @@
 		D973137E2B8DFE930046083E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973137D2B8DFE930046083E /* Fonts.swift */; };
 		D9B3E5782B935BA500E44677 /* GameMusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3E5772B935BA500E44677 /* GameMusicService.swift */; };
 		D9CEFE0A2B8FA3320009949C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEFE092B8FA3320009949C /* AudioPlayer.swift */; };
+		D9CF9E212B938CE000E78E8B /* ClueUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF9E202B938CE000E78E8B /* ClueUIButton.swift */; };
 		D9E7691F2B8D437E0096FAEC /* button-gold.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E769042B8D437D0096FAEC /* button-gold.png */; };
 		D9E769202B8D437E0096FAEC /* clue-call-used.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E769052B8D437D0096FAEC /* clue-call-used.png */; };
 		D9E769212B8D437E0096FAEC /* clue-50-percent-used.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E769062B8D437D0096FAEC /* clue-50-percent-used.png */; };
@@ -101,6 +102,7 @@
 		D973137D2B8DFE930046083E /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		D9B3E5772B935BA500E44677 /* GameMusicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMusicService.swift; sourceTree = "<group>"; };
 		D9CEFE092B8FA3320009949C /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		D9CF9E202B938CE000E78E8B /* ClueUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueUIButton.swift; sourceTree = "<group>"; };
 		D9E769042B8D437D0096FAEC /* button-gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-gold.png"; sourceTree = "<group>"; };
 		D9E769052B8D437D0096FAEC /* clue-call-used.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clue-call-used.png"; sourceTree = "<group>"; };
 		D9E769062B8D437D0096FAEC /* clue-50-percent-used.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clue-50-percent-used.png"; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				D973137B2B8DFDBA0046083E /* Sounds.swift */,
 				D973137D2B8DFE930046083E /* Fonts.swift */,
 				D5AFCAFD2B9371DF000B4022 /* ClueTypes.swift */,
+				D9CF9E202B938CE000E78E8B /* ClueUIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				D96B366E2B8FF7340094DCA1 /* ClueButtonView.swift in Sources */,
 				D973137C2B8DFDBA0046083E /* Sounds.swift in Sources */,
 				AD0799E42B8F33F800AEFFE7 /* QuestionsView.swift in Sources */,
+				D9CF9E212B938CE000E78E8B /* ClueUIButton.swift in Sources */,
 				A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */,
 				09E3DCE42B90F04500C73649 /* RulesViewController.swift in Sources */,
 				09E3DCE62B90F07400C73649 /* RulesView.swift in Sources */,

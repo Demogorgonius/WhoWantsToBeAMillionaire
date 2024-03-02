@@ -216,6 +216,7 @@ extension GameMainView {
             print("outside \(clue)")
             clueButton = ClueButtonView(clue)
             clueButton?.delegate = self
+//            clueButton?.clue = clue
             cluesHStack.addArrangedSubview(clueButton!)
         }}
 //        [
@@ -277,7 +278,7 @@ extension GameMainView: AnswerButtonViewDelegate {
 }
 
 extension GameMainView: ClueButtonViewDelegate {
-    func clueButtonView(didTapButton button: UIButton, clue: ClueTypes) {
+    func clueButtonView(didTapButton button: ClueUIButton, clue: ClueTypes) {
         clueButton?.didTapClueButton(button)
     }
 }

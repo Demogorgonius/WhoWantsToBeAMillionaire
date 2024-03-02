@@ -19,7 +19,7 @@ class GameMainView: CustomView {
     var graphVC: GraphView?
     weak var delegate: GameMainViewDelegate?
     
-    fileprivate var question: Question?
+    fileprivate var question: GameQuestion?
     
     private lazy var backgroundImageView = makeImageView(
         image: UIImage.BackgroundImage.backgroundWithPeople ?? UIImage()
@@ -148,21 +148,24 @@ class GameMainView: CustomView {
         getMoneyButton.addTarget(self, action: #selector(didTapGetMoneyButton), for: .touchUpInside)
     }
     
-    func setQuestion(_ question: Question) {
+    func setQuestion(_ question: GameQuestion) {
         self.question = question
+        fillQuestionValues(question)
     }
     
-    private func fillQuestionValues(question: Question) {
+    private func fillQuestionValues(_ question: GameQuestion) {
         setQuestionText(question.text)
-        setQuestionAnswers(question.getAnswers())
+        setQuestionAnswers(question.answer)
+        setQuestionNumber(question.index)
+        setQuestionAmount(question.sum)
     }
     
     private func setQuestionText(_ text: String) {
         questionTextLabel.text = text
     }
     
-    private func setQuestionAmount(_ amount: Int) {
-        questionAmountLabel.text = "\(String(amount)) RUB"
+    private func setQuestionAmount(_ amount: String) {
+        questionAmountLabel.text = amount
     }
     
     private func setQuestionNumber(_ number: Int) {
@@ -170,9 +173,9 @@ class GameMainView: CustomView {
     }
     
     func setQuestionAnswers(_ answers: [String]) {
+        var localAnswers = answers
         for view in answersVStack.subviews {
             if let button = view as? AnswerButtonView {
-                var localAnswers = answers
                 button.setAnswerTextLabel(localAnswers.removeLast())
             }
         }
@@ -220,7 +223,7 @@ extension GameMainView {
                 image: UIImage.ButtomImage.buttonBlue!,
                 letter: key,
                 index: letters[key] ?? 0,
-                text: "\(key) some var"
+                text: ""
             )
             answerButton?.delegate = self
             answersVStack.addArrangedSubview(answerButton!)
@@ -293,3 +296,4 @@ extension GameMainView: ClueButtonViewDelegate {
         graphVC.removeFromSuperview()
     }
 }
+

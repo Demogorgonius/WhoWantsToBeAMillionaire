@@ -64,7 +64,7 @@ final class QuestionsView: CustomView {
 // MARK: - Create and Setup Question View
 extension QuestionsView {
     
-    /// Создание и добавление в стек 15-ти вьюшек с номером вопроса и незгараемой суммой
+    /// Создание и добавление в стек 15-ти вьюшек с номером вопроса и неcгораемой суммой
     private func configureQuestionView() {
         (0...QuestionHelper.allCases.count - 1).reversed().forEach { i in
             let title = QuestionHelper.allCases

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		09578BA92B90C30B008F57D4 /* StartScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09578BA82B90C30B008F57D4 /* StartScreenView.swift */; };
 		09578BAB2B90CB76008F57D4 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09578BAA2B90CB76008F57D4 /* RegistrationView.swift */; };
+		098E046C2B936EF0006090C0 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E046B2B936EF0006090C0 /* ResultsViewController.swift */; };
+		098E046E2B936F78006090C0 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E046D2B936F78006090C0 /* ResultsView.swift */; };
+		098E04702B93810C006090C0 /* RegistrationUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E046F2B93810C006090C0 /* RegistrationUserService.swift */; };
+		098E04722B9395FC006090C0 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098E04712B9395FC006090C0 /* ResultTableViewCell.swift */; };
 		09ACC9672B8FBEE100FA0CA2 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ACC9662B8FBEE100FA0CA2 /* StartScreenViewController.swift */; };
 		09ACC9692B8FBF2E00FA0CA2 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09ACC9682B8FBF2E00FA0CA2 /* RegistrationViewController.swift */; };
 		09E3DCE42B90F04500C73649 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E3DCE32B90F04500C73649 /* RulesViewController.swift */; };
@@ -74,6 +78,10 @@
 /* Begin PBXFileReference section */
 		09578BA82B90C30B008F57D4 /* StartScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenView.swift; sourceTree = "<group>"; };
 		09578BAA2B90CB76008F57D4 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		098E046B2B936EF0006090C0 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		098E046D2B936F78006090C0 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		098E046F2B93810C006090C0 /* RegistrationUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationUserService.swift; sourceTree = "<group>"; };
+		098E04712B9395FC006090C0 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		09ACC9662B8FBEE100FA0CA2 /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		09ACC9682B8FBF2E00FA0CA2 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		09E3DCE32B90F04500C73649 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +157,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		098E04682B936EB9006090C0 /* ResultsModule */ = {
+			isa = PBXGroup;
+			children = (
+				098E046B2B936EF0006090C0 /* ResultsViewController.swift */,
+				098E046D2B936F78006090C0 /* ResultsView.swift */,
+				098E04712B9395FC006090C0 /* ResultTableViewCell.swift */,
+			);
+			path = ResultsModule;
+			sourceTree = "<group>";
+		};
 		09ACC9632B8FBE9000FA0CA2 /* StartScreenView */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +181,7 @@
 			children = (
 				09ACC9682B8FBF2E00FA0CA2 /* RegistrationViewController.swift */,
 				09578BAA2B90CB76008F57D4 /* RegistrationView.swift */,
+				098E046F2B93810C006090C0 /* RegistrationUserService.swift */,
 			);
 			path = RegistrationView;
 			sourceTree = "<group>";
@@ -217,6 +236,7 @@
 		A5B8955C2B8BE1C400A30134 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				098E04682B936EB9006090C0 /* ResultsModule */,
 				09E3DCE22B90EC0900C73649 /* RulesView */,
 				09ACC9652B8FBEAE00FA0CA2 /* RegistrationView */,
 				09ACC9632B8FBE9000FA0CA2 /* StartScreenView */,
@@ -516,6 +536,7 @@
 				09ACC9692B8FBF2E00FA0CA2 /* RegistrationViewController.swift in Sources */,
 				D588C67E2B8F3DC100B39884 /* QuestionsAPI.swift in Sources */,
 				D9B3E5782B935BA500E44677 /* GameMusicService.swift in Sources */,
+				098E046E2B936F78006090C0 /* ResultsView.swift in Sources */,
 				D9CEFE0A2B8FA3320009949C /* AudioPlayer.swift in Sources */,
 				D9550A652B8FE3E10018AA2C /* GameMainViewController.swift in Sources */,
 				D9E769542B8DF5150096FAEC /* Images.swift in Sources */,
@@ -526,10 +547,13 @@
 				D5AFCAFE2B9371DF000B4022 /* ClueTypes.swift in Sources */,
 				AD0799E62B8F691E00AEFFE7 /* QuestionView.swift in Sources */,
 				AD0799EA2B8F748300AEFFE7 /* QuestionHelper.swift in Sources */,
+				098E04722B9395FC006090C0 /* ResultTableViewCell.swift in Sources */,
 				A5B8956B2B8D1BFD00A30134 /* CustomViewController.swift in Sources */,
 				D9550A622B8FDFB10018AA2C /* GameMainView.swift in Sources */,
 				D96B366E2B8FF7340094DCA1 /* ClueButtonView.swift in Sources */,
 				D973137C2B8DFDBA0046083E /* Sounds.swift in Sources */,
+				098E046C2B936EF0006090C0 /* ResultsViewController.swift in Sources */,
+				098E04702B93810C006090C0 /* RegistrationUserService.swift in Sources */,
 				AD0799E42B8F33F800AEFFE7 /* QuestionsView.swift in Sources */,
 				D9CF9E212B938CE000E78E8B /* ClueUIButton.swift in Sources */,
 				A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */,

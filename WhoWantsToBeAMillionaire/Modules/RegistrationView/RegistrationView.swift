@@ -10,7 +10,7 @@ import SnapKit
 
 
 protocol RegistrationViewDelegate: AnyObject {
-    func registrationButton(didTapButton button: UIButton)
+    func registrationButton(didTapButton button: UIButton, userName: String)
 }
 
 class RegistrationView: CustomView {
@@ -110,7 +110,7 @@ class RegistrationView: CustomView {
 
 extension RegistrationView {
     @objc func didTapRegistrationButton(_ sender: UIButton) {
-        delegate?.registrationButton(didTapButton: sender)
+        delegate?.registrationButton(didTapButton: sender, userName: textField.text ?? "")
     }
 }
 

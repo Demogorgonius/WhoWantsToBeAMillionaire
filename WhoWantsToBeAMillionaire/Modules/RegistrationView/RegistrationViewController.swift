@@ -7,22 +7,20 @@
 
 import UIKit
 import SnapKit
+
 class RegistrationViewController: CustomViewController<RegistrationView> {
-    
+    let registrationUserService = RegistrationUserService()
     override func viewDidLoad() {
         super.viewDidLoad()
         customView.delegate = self
     }
 }
 
-extension RegistrationViewController: RegistrationViewDelegate {
-    func registrationButton(didTapButton button: UIButton) {
-        
+extension RegistrationViewController: RegistrationViewDelegate {    
+    func registrationButton(didTapButton button: UIButton, userName: String) {
+        registrationUserService.saveUser(name: userName, amount: 0)
         let gameMainViewController = GameMainViewController()
         navigationController?.pushViewController(gameMainViewController, animated: true)
-    
     }
-    
-    
 }
 

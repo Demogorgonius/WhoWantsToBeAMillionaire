@@ -28,7 +28,7 @@ final class GameMainViewController: CustomViewController<GameMainView> {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        getQuestion()
+        setQuestion()
         waitForAnswer()
     }
     
@@ -65,11 +65,8 @@ final class GameMainViewController: CustomViewController<GameMainView> {
         navigationController?.pushViewController(progressController, animated: true)
     }
     
-    func getQuestion() {
-        let getQuestion = gameService.getQuestion()
-        customView.setQuestion(getQuestion)
-        print("\(getQuestion)")
-       
+    func setQuestion() {
+        customView.setQuestion(gameService.getQuestion())
     }
     
 }
@@ -123,10 +120,11 @@ extension GameMainViewController: GameServiceViewProtocol {
     
     func fiftyClue(answers: [String]) {
         customView.setQuestionAnswers(answers)
-        customView.disableClue(.fifty)
+        customView.disableEmptyAnswers()
     }
     
     func callClue(answer: Int) {
+        customView.highlightAnswer(answer)
     }
     
     func helpClue(answers: [Int]) {
@@ -136,7 +134,9 @@ extension GameMainViewController: GameServiceViewProtocol {
     func rightToErrorClue(used: Bool) {
     }
     
-    func incorrectAnswerHighlight() {
+    func incorrectAnswerHighlight(answer: Int) {
+        customView.highlightAnswer(answer)
+        customView.disableAnswer(answer)
     }
     
     

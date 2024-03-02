@@ -201,8 +201,26 @@ class GameMainView: CustomView {
         getMoneyButton.isEnabled = false
     }
     
-    func disableClue(_ clue: ClueTypes) {
-        print("\(clue) disable")
+    func disableEmptyAnswers() {
+        for view in answersVStack.subviews {
+            if let button = view as? AnswerButtonView {
+                if button.answerTextLabel.text == "" {
+                    button.disable(false)
+                }
+            }
+        }
+    }
+    
+    func highlightAnswer(_ answerIndex: Int) {
+        if let button = answersVStack.subviews[answerIndex] as? AnswerButtonView {
+            button.changeButtonState(image: UIImage.ButtomImage.buttonGold ?? UIImage())
+        }
+    }
+    
+    func disableAnswer(_ answerIndex: Int) {
+        if let button = answersVStack.subviews[answerIndex] as? AnswerButtonView {
+            button.disable(false)
+        }
     }
     
     func showGraphView() {

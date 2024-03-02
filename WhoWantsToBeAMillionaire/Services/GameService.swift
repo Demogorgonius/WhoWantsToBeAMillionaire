@@ -29,7 +29,7 @@ protocol GameServiceViewProtocol: AnyObject {
     func correctAnswerSelect()
     func getMoneySelect()
     func incorrectAnswerSelect()
-    func incorrectAnswerHighlight()
+    func incorrectAnswerHighlight(answer: Int)
     func fiftyClue(answers: [String])
     func callClue(answer: Int)
     func helpClue(answers: [Int])
@@ -95,7 +95,7 @@ class GameService {
             if answerIndex == currentQuestion?.trueAnswer {
                 view.correctAnswerSelect()
             } else if rightToErrorSelect == true {
-                view.incorrectAnswerHighlight()
+                view.incorrectAnswerHighlight(answer: answerIndex)
                 rightToErrorSelect = false
             } else {
                 view.incorrectAnswerSelect()
@@ -115,14 +115,11 @@ class GameService {
             guard let currentQuestion else { return }
             var answerArray = currentQuestion.answer
             var delCount: Int = 0
-            for  index in 0...3 {
+            for  index in Array(0...3).shuffled() {
                 
                 if index != currentQuestion.trueAnswer && delCount < 2 {
-                    
-                    if Bool.random() {
-                        answerArray[index] = ""
-                        delCount += 1
-                    }
+                    answerArray[index] = ""
+                    delCount += 1
                 }
             }
             clues[ClueTypes.fifty] = false
@@ -132,10 +129,12 @@ class GameService {
             let indexTrueAnswer = currentQuestion.trueAnswer
             var indexCall = 0
             
-            if Int.random(in: 1...5) != 5 {
+            if Int.random(in: 0..<100) < 80 {
                 indexCall = indexTrueAnswer
-            } else if indexTrueAnswer == 0 {
-                indexCall = Int.random(in: 1...3)
+            } else {
+                var indexes = Array(0...3)
+                indexes.remove(at: indexTrueAnswer)
+                indexCall = indexes.randomElement()!
             }
             
             clues[ClueTypes.call] = false

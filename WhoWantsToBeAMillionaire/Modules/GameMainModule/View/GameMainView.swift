@@ -170,15 +170,35 @@ class GameMainView: CustomView {
     
     private func setQuestionAnswers(_ answers: [String]) {
         for view in answersVStack.subviews {
-            if let button = view as? UIButton {
+            if let button = view as? AnswerButtonView {
                 var localAnswers = answers
-                button.setTitle(localAnswers.removeLast(), for: .normal)
+                button.setAnswerTextLabel(localAnswers.removeLast())
             }
         }
     }
     
     func updateTimerLabel(_ value: Int) {
         timerLabel.text = String(value)
+    }
+    
+    func switchTimerHidden(_ isHidden: Bool){
+        timerLabel.isHidden = isHidden
+    }
+    
+    func disableButtons() {
+        for view in answersVStack.subviews {
+            if let button = view as? AnswerButtonView {
+                button.disable()
+            }
+        }
+        
+        for view in cluesHStack.subviews {
+            if let button = view as? ClueButtonView {
+                button.disable()
+            }
+        }
+        
+        getMoneyButton.isEnabled = false
     }
 }
 
@@ -243,6 +263,8 @@ extension GameMainView {
 
 extension GameMainView: AnswerButtonViewDelegate {
     func answerButtonView(didTapButton button: UIButton) {
+        disableButtons()
+        print("\(button.isEnabled)")
         answerButton?.didTapAnswerButton(button)
     }
     

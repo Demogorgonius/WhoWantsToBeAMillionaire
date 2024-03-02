@@ -28,7 +28,7 @@ struct Question {
         
     }
     func getAnswers() -> [String] {
-            var answers = [correctAnswer] + incorrectAnswers
-            return answers.shuffled()
-        }
+        let answers = [correctAnswer] + incorrectAnswers
+        return answers.shuffled()
+    }
 }

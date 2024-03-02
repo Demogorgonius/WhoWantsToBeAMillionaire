@@ -9,10 +9,16 @@ import UIKit
 
 final class QuestionsViewController: CustomViewController<QuestionsView> {
     
+    let musicService = GameMusicService()
     
-  // MARK: Life Cycle
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func userWin() {
+        // If question number is 15 - play user win
+        musicService.userWin()
     }
     
 }

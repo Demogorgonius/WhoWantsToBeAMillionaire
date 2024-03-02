@@ -55,7 +55,7 @@ class GameMainView: CustomView {
     private lazy var getMoneyButton: UIButton = {
         let button = UIButton()
         
-        button.configuration = .filled()    
+        button.configuration = .filled()
         button.configuration?.title = "Забрать деньги"
         button.configuration?.cornerStyle = .medium
         button.configuration?.attributedTitle?.font = UIFont.TextFont.Question.label
@@ -68,7 +68,7 @@ class GameMainView: CustomView {
     private lazy var answersVStack = makeStackView(axis: .vertical)
     
     private lazy var cluesHStack = makeStackView(axis: .horizontal)
-
+    
     
     // MARK: Set Views
     override func setViews() {
@@ -181,16 +181,16 @@ class GameMainView: CustomView {
         timerLabel.text = String(value)
     }
     
-    func disableButtons() {
+    func disableButtons(_ state: Bool) {
         for view in answersVStack.subviews {
             if let button = view as? AnswerButtonView {
-                button.disable()
+                button.disable(state)
             }
         }
         
         for view in cluesHStack.subviews {
             if let button = view as? ClueButtonView {
-                button.disable()
+                button.disable(state)
             }
         }
         
@@ -204,10 +204,17 @@ class GameMainView: CustomView {
 
 extension GameMainView {
     private func configureAnswersView() {
-        ["A","B","C","D"].forEach { i in
-            answerButton = AnswerButtonView(image: UIImage.ButtomImage.buttonBlue!, letter: i , text: "\(i) some var")
+        let letters = ["A": 0, "B": 1 , "C": 2, "D": 3]
+        letters.keys.sorted().forEach{ key in
+            answerButton = AnswerButtonView(
+                image: UIImage.ButtomImage.buttonBlue!,
+                letter: key,
+                index: letters[key] ?? 0,
+                text: "\(key) some var"
+            )
             answerButton?.delegate = self
             answersVStack.addArrangedSubview(answerButton!)
+            
         }
     }
     
@@ -259,8 +266,6 @@ extension GameMainView {
 
 extension GameMainView: AnswerButtonViewDelegate {
     func answerButtonView(didTapButton button: UIButton) {
-        disableButtons()
-        print("\(button.isEnabled)")
         answerButton?.didTapAnswerButton(button)
     }
     

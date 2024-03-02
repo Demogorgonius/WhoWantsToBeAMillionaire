@@ -54,8 +54,8 @@ final class ClueButtonView: UIView {
         button.setBackgroundImage(image, for: .normal)
     }
     
-    func disable() {
-        button.isEnabled = false
+    func disable(_ state: Bool) {
+        button.isEnabled = state
     }
 }
 

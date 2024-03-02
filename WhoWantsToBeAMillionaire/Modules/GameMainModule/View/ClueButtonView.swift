@@ -9,15 +9,15 @@ import UIKit
 import SnapKit
 
 protocol ClueButtonViewDelegate: AnyObject {
-    func clueButtonView(didTapButton button: UIButton)
+    func clueButtonView(didTapButton button: ClueUIButton, clue: ClueTypes)
 }
 
 final class ClueButtonView: UIView {
     
     weak var delegate: ClueButtonViewDelegate?
     
-    private var button: UIButton = {
-        let button = UIButton()
+    private var button: ClueUIButton = {
+        let button = ClueUIButton()
         button.backgroundColor = .clear
         button.contentMode = .scaleAspectFill
         button.configuration?.title = ""
@@ -26,8 +26,9 @@ final class ClueButtonView: UIView {
     }()
 
     // MARK: Init
-    init(image: UIImage) {
-        self.button.setBackgroundImage(image, for: .normal)
+    init(_ clue: ClueTypes) {
+        self.button.clue = clue
+        self.button.setBackgroundImage(clue.image, for: .normal)
         super.init(frame: .zero)
         setViews()
         layoutViews()
@@ -59,7 +60,14 @@ final class ClueButtonView: UIView {
 }
 
 extension ClueButtonView {
-    @objc func didTapClueButton(_ sender: UIButton) {
-        delegate?.clueButtonView(didTapButton: sender)
+    @objc func didTapClueButton(_ sender: ClueUIButton) {
+        delegate?.clueButtonView(didTapButton: sender, clue: sender.clue ?? ClueTypes.fifty
+        )
     }
 }
+//
+//extension UIButton {
+//    convenience init(text: ClueTypes.RawValue) {
+//        setTitle(text, for: .normal)
+//    }
+//}

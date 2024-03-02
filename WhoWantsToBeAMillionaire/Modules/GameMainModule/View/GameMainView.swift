@@ -168,7 +168,7 @@ class GameMainView: CustomView {
         questionNumberLabel.text = "Вопрос \(String(number))"
     }
     
-    private func setQuestionAnswers(_ answers: [String]) {
+    func setQuestionAnswers(_ answers: [String]) {
         for view in answersVStack.subviews {
             if let button = view as? AnswerButtonView {
                 var localAnswers = answers
@@ -179,10 +179,6 @@ class GameMainView: CustomView {
     
     func updateTimerLabel(_ value: Int) {
         timerLabel.text = String(value)
-    }
-    
-    func switchTimerHidden(_ isHidden: Bool){
-        timerLabel.isHidden = isHidden
     }
     
     func disableButtons() {
@@ -200,6 +196,10 @@ class GameMainView: CustomView {
         
         getMoneyButton.isEnabled = false
     }
+    
+    func disableClue(_ clue: ClueTypes) {
+        print("\(clue) disable")
+    }
 }
 
 extension GameMainView {
@@ -212,12 +212,8 @@ extension GameMainView {
     }
     
     private func configureCluesView() {
-        [
-            UIImage.CluesImage.clueFiftyPercent,
-            UIImage.CluesImage.clueCall,
-            UIImage.CluesImage.cluePeopleHelp
-        ].forEach { image in
-            clueButton = ClueButtonView(image: image!)
+        ClueTypes.allCases.forEach { clue in
+            clueButton = ClueButtonView(clue)
             clueButton?.delegate = self
             cluesHStack.addArrangedSubview(clueButton!)
         }}
@@ -271,7 +267,7 @@ extension GameMainView: AnswerButtonViewDelegate {
 }
 
 extension GameMainView: ClueButtonViewDelegate {
-    func clueButtonView(didTapButton button: UIButton) {
+    func clueButtonView(didTapButton button: ClueUIButton, clue: ClueTypes) {
         clueButton?.didTapClueButton(button)
     }
 }

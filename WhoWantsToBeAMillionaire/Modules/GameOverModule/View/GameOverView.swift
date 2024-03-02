@@ -8,9 +8,15 @@
 import UIKit
 import SnapKit
 
+// MARK: - GameOverViewDelegate
+protocol GameOverViewDelegate: AnyObject {
+    func playAgainButtonPressed(_ button: UIButton)
+}
 
 // MARK: - GameOverView
 final class GameOverView: CustomView {
+    
+    weak var delegate: GameOverViewDelegate?
     
     // MARK: Private Properties
     private lazy var backgroundImageView = makeImageView(
@@ -82,7 +88,7 @@ extension GameOverView {
     
     @objc
     private func didTapPlayAgainButton(_ button: UIButton) {
-        print("Button tapped")
+        delegate?.playAgainButtonPressed(playAgainButton)
     }
 }
 

@@ -272,7 +272,7 @@ extension GameMainView: AnswerButtonViewDelegate {
 }
 
 extension GameMainView: ClueButtonViewDelegate {
-    func clueButtonView(didTapButton button: ClueUIButton, clue: ClueTypes) {
+    func clueButtonView(didTapButton button: ClueUIButton) {
         clueButton?.didTapClueButton(button)
     }
 }

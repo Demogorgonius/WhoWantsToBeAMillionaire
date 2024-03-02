@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol ClueButtonViewDelegate: AnyObject {
-    func clueButtonView(didTapButton button: ClueUIButton, clue: ClueTypes)
+    func clueButtonView(didTapButton button: ClueUIButton)
 }
 
 final class ClueButtonView: UIView {
@@ -21,6 +21,7 @@ final class ClueButtonView: UIView {
         button.backgroundColor = .clear
         button.contentMode = .scaleAspectFill
         button.configuration?.title = ""
+        button.isPressed = false
         
         return button
     }()
@@ -61,13 +62,6 @@ final class ClueButtonView: UIView {
 
 extension ClueButtonView {
     @objc func didTapClueButton(_ sender: ClueUIButton) {
-        delegate?.clueButtonView(didTapButton: sender, clue: sender.clue ?? ClueTypes.fifty
-        )
+        delegate?.clueButtonView(didTapButton: sender)
     }
 }
-//
-//extension UIButton {
-//    convenience init(text: ClueTypes.RawValue) {
-//        setTitle(text, for: .normal)
-//    }
-//}

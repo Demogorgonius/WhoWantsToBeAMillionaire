@@ -65,9 +65,10 @@ final class GameMainViewController: CustomViewController<GameMainView> {
 }
 
 extension GameMainViewController: ClueButtonViewDelegate {
-    func clueButtonView(didTapButton button: ClueUIButton, clue: ClueTypes) {
-        print("Clue button is pressed: \(clue)")
-        gameService.playerAct(typeOfAction: PlayerAction.clue, answerIndex: nil, clueType: clue)
+    func clueButtonView(didTapButton button: ClueUIButton) {
+        print("Clue button is pressed: \(button.clue)")
+        button.useClue()
+        gameService.playerAct(typeOfAction: PlayerAction.clue, answerIndex: nil, clueType: button.clue)
     }
 }
 

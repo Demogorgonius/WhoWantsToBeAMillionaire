@@ -11,7 +11,7 @@ enum ClueTypes: String, CaseIterable {
     case fifty
     case call
     case help
-//    case rightToErrorIsAvailable = "rightToErrorIsAvailable"
+    case rightToError
     
     var image: UIImage {
         switch self {
@@ -21,8 +21,10 @@ enum ClueTypes: String, CaseIterable {
             return UIImage.CluesImage.clueCall ?? UIImage()
         case .help:
             return UIImage.CluesImage.cluePeopleHelp ?? UIImage()
-//        default:
-//            return UIImage.ButtomImage.buttonPurple ?? UIImage()
+        case .rightToError:
+            return UIImage.CluesImage.clueRightToError ?? UIImage()
+        default:
+            return UIImage()
         }
     }
 }

@@ -65,3 +65,9 @@ extension ClueButtonView {
         )
     }
 }
+//
+//extension UIButton {
+//    convenience init(text: ClueTypes.RawValue) {
+//        setTitle(text, for: .normal)
+//    }
+//}

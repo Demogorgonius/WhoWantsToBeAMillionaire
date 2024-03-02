@@ -26,10 +26,11 @@ protocol GameServiceViewProtocol: AnyObject {
     func correctAnswerSelect()
     func getMoneySelect()
     func incorrectAnswerSelect()
+    func incorrectAnswerHighlight()
     func fiftyClue(answers: [String])
     func callClue(answer: Int)
     func helpClue(answers: [Int])
-    func oneErrorClue(used: Bool)
+    func rightToErrorClue(used: Bool)
     
 }
 
@@ -43,9 +44,9 @@ class GameService {
     var clues = [
         ClueTypes.call: true,
         ClueTypes.fifty: true,
-        ClueTypes.help: true
-    ] //, Clues.rightToErrorIsAvailable: true]
-    var rightToError = true
+        ClueTypes.help: true,
+        ClueTypes.rightToError: true]
+    var rightToErrorSelect = false
         
     init() {
         questions = questionApi.fetchData()
@@ -81,6 +82,9 @@ class GameService {
             guard let answerIndex else { return }
             if answerIndex == currentQuestion?.trueAnswer {
                 view.correctAnswerSelect()
+            } else if rightToErrorSelect == true {
+                view.incorrectAnswerHighlight()
+                rightToErrorSelect = false
             } else {
                 view.incorrectAnswerSelect()
             }
@@ -140,27 +144,12 @@ class GameService {
             
             clues[ClueTypes.help] = false
             view.helpClue(answers: percentageGetHelp)
-//        case .oneError:
-//            
-//            rightToError = false
-//            view.oneErrorClue(used: true)
+        case .rightToError:
+            rightToErrorSelect = true
+            clues[ClueTypes.rightToError] = false
+            view.rightToErrorClue(used: true)
         }
     }
     
-    func getOneErrorClue(answerIndex: Int?) {
-        guard let currentQuestion else { return }
-        var answerArray = currentQuestion.answer
-        var delCount = 0
-        for  index in 0...3 {
-            
-            if index == currentQuestion.trueAnswer && delCount < 2 {
-                
-                if Bool.random() {
-                    answerArray[index] = ""
-                    delCount += 1
-                }
-            }
-        }
-    }
 }
 

@@ -31,6 +31,14 @@ extension UIImage {
         static var cluePeopleHelpUsed: UIImage? {
             return UIImage(named: "clue-people-help-used")
         }
+        
+        static var clueRightToError: UIImage? {
+            return UIImage(named: "clue-right-to-error")
+        }
+        
+        static var clueRightToErrorUsed: UIImage? {
+            return UIImage(named: "clue-right-to-error-used")
+        }
     }
     
     enum BackgroundImage {

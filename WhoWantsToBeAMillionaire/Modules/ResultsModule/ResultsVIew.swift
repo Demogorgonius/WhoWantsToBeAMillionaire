@@ -10,9 +10,7 @@ import SnapKit
 
 class ResultsView: CustomView {
     
-    let dataSource: [(number: String, score: String)] = [
-            ("1", "text"), ("2", "2 usd"), ("3", "text"), ("4", "2 usd"), ("5", "text"), ("6", "2 usd")
-        ]
+    var dataSource: [User] = []
     
     // Mark: - Views
     let cellSpacingHeight: CGFloat = 10
@@ -57,7 +55,7 @@ class ResultsView: CustomView {
         label.numberOfLines = 1
         return label
     }()
-
+    
     
     override func setViews() {
         self.addSubview(backgroundImageView)
@@ -67,6 +65,7 @@ class ResultsView: CustomView {
         self.addSubview(totalWonLabel)
         resultTableView.delegate = self
         resultTableView.dataSource = self
+        createDataSource()
     }
     
     override func layoutViews() {
@@ -101,13 +100,15 @@ class ResultsView: CustomView {
             $0.height.equalTo(35)
             $0.width.equalTo(160)
         }
-
+        
     }
     
     func createDataSource() {
+        dataSource = RegistrationUserService.shared.loadUsers()
+        resultTableView.reloadData()
         
     }
- 
+    
 }
 extension ResultsView: UITableViewDelegate, UITableViewDataSource {
     
@@ -116,18 +117,21 @@ extension ResultsView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.reuseIdentifier, for: indexPath) as? ResultTableViewCell
-            else {
-                return UITableViewCell()
-            }
-
-            let item = dataSource[indexPath.row]
-            cell.setTitles(number: item.number, score: item.score)
-
-            return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ResultTableViewCell.reuseIdentifier, for: indexPath) as? ResultTableViewCell
+        else {
+            return UITableViewCell()
         }
-
+        
+        let item = dataSource[indexPath.row]
+        let name = "\(indexPath.row). \(item.name)"
+        let amount = " \(item.amount) USD"
+        cell.setTitles(number: name, score: amount)
+        
+        return cell
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 77
     }
+    
 }

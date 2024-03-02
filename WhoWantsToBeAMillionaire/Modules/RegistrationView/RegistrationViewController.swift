@@ -16,12 +16,17 @@ class RegistrationViewController: CustomViewController<RegistrationView> {
 }
 
 extension RegistrationViewController: RegistrationViewDelegate {
+    func saveUser(user: User) {
+        
+    }
+    
     func registrationButton(didTapButton button: UIButton) {
         
         let gameMainViewController = GameMainViewController()
         navigationController?.pushViewController(gameMainViewController, animated: true)
     
     }
+    
     
     
 }

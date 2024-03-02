@@ -34,6 +34,7 @@
 		AD0799EA2B8F748300AEFFE7 /* QuestionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0799E92B8F748300AEFFE7 /* QuestionHelper.swift */; };
 		D588C67C2B8F3B1700B39884 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588C67B2B8F3B1700B39884 /* Question.swift */; };
 		D588C67E2B8F3DC100B39884 /* QuestionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588C67D2B8F3DC100B39884 /* QuestionsAPI.swift */; };
+		D5AFCAFE2B9371DF000B4022 /* ClueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFCAFD2B9371DF000B4022 /* ClueTypes.swift */; };
 		D9550A622B8FDFB10018AA2C /* GameMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9550A612B8FDFB10018AA2C /* GameMainView.swift */; };
 		D9550A652B8FE3E10018AA2C /* GameMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9550A642B8FE3E10018AA2C /* GameMainViewController.swift */; };
 		D96B366C2B8FF7200094DCA1 /* AnswerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B366B2B8FF7200094DCA1 /* AnswerButtonView.swift */; };
@@ -44,6 +45,8 @@
 		D9CEFE0A2B8FA3320009949C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEFE092B8FA3320009949C /* AudioPlayer.swift */; };
 		D9CF9E1D2B93876A00E78E8B /* clue-right-to-error.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CF9E1C2B93876A00E78E8B /* clue-right-to-error.png */; };
 		D9CF9E1F2B9387CF00E78E8B /* clue-right-to-error-used.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CF9E1E2B9387CF00E78E8B /* clue-right-to-error-used.png */; };
+		D9CF9E212B938CE000E78E8B /* ClueUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF9E202B938CE000E78E8B /* ClueUIButton.swift */; };
+		D9CF9E232B93C28000E78E8B /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF9E222B93C28000E78E8B /* UIButton.swift */; };
 		D9E7691F2B8D437E0096FAEC /* button-gold.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E769042B8D437D0096FAEC /* button-gold.png */; };
 		D9E769202B8D437E0096FAEC /* clue-call-used.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E769052B8D437D0096FAEC /* clue-call-used.png */; };
 		D9E769212B8D437E0096FAEC /* clue-50-percent-used.png in Resources */ = {isa = PBXBuildFile; fileRef = D9E769062B8D437D0096FAEC /* clue-50-percent-used.png */; };
@@ -101,6 +104,7 @@
 		AD0799E92B8F748300AEFFE7 /* QuestionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHelper.swift; sourceTree = "<group>"; };
 		D588C67B2B8F3B1700B39884 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		D588C67D2B8F3DC100B39884 /* QuestionsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAPI.swift; sourceTree = "<group>"; };
+		D5AFCAFD2B9371DF000B4022 /* ClueTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueTypes.swift; sourceTree = "<group>"; };
 		D9550A612B8FDFB10018AA2C /* GameMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMainView.swift; sourceTree = "<group>"; };
 		D9550A642B8FE3E10018AA2C /* GameMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMainViewController.swift; sourceTree = "<group>"; };
 		D96B366B2B8FF7200094DCA1 /* AnswerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButtonView.swift; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 		D9CEFE092B8FA3320009949C /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		D9CF9E1C2B93876A00E78E8B /* clue-right-to-error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clue-right-to-error.png"; sourceTree = "<group>"; };
 		D9CF9E1E2B9387CF00E78E8B /* clue-right-to-error-used.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clue-right-to-error-used.png"; sourceTree = "<group>"; };
+		D9CF9E202B938CE000E78E8B /* ClueUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueUIButton.swift; sourceTree = "<group>"; };
+		D9CF9E222B93C28000E78E8B /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		D9E769042B8D437D0096FAEC /* button-gold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-gold.png"; sourceTree = "<group>"; };
 		D9E769052B8D437D0096FAEC /* clue-call-used.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clue-call-used.png"; sourceTree = "<group>"; };
 		D9E769062B8D437D0096FAEC /* clue-50-percent-used.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clue-50-percent-used.png"; sourceTree = "<group>"; };
@@ -260,6 +266,9 @@
 				D9E769532B8DF5150096FAEC /* Images.swift */,
 				D973137B2B8DFDBA0046083E /* Sounds.swift */,
 				D973137D2B8DFE930046083E /* Fonts.swift */,
+				D5AFCAFD2B9371DF000B4022 /* ClueTypes.swift */,
+				D9CF9E202B938CE000E78E8B /* ClueUIButton.swift */,
+				D9CF9E222B93C28000E78E8B /* UIButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -519,6 +528,7 @@
 				AD0799E22B8F33AA00AEFFE7 /* QuestionsViewController.swift in Sources */,
 				AD0799DF2B8E8EC400AEFFE7 /* GameOverView.swift in Sources */,
 				D96B366C2B8FF7200094DCA1 /* AnswerButtonView.swift in Sources */,
+				D9CF9E232B93C28000E78E8B /* UIButton.swift in Sources */,
 				D973137E2B8DFE930046083E /* Fonts.swift in Sources */,
 				A5B895642B8BE28900A30134 /* MainViewController.swift in Sources */,
 				09578BA92B90C30B008F57D4 /* StartScreenView.swift in Sources */,
@@ -534,6 +544,7 @@
 				09578BAB2B90CB76008F57D4 /* RegistrationView.swift in Sources */,
 				A5B895692B8D1BDC00A30134 /* CustomView.swift in Sources */,
 				A5AB295C2B925E4D0093B49E /* GameService.swift in Sources */,
+				D5AFCAFE2B9371DF000B4022 /* ClueTypes.swift in Sources */,
 				AD0799E62B8F691E00AEFFE7 /* QuestionView.swift in Sources */,
 				AD0799EA2B8F748300AEFFE7 /* QuestionHelper.swift in Sources */,
 				098E04722B9395FC006090C0 /* ResultTableViewCell.swift in Sources */,
@@ -544,6 +555,7 @@
 				098E046C2B936EF0006090C0 /* ResultsViewController.swift in Sources */,
 				098E04702B93810C006090C0 /* RegistrationUserService.swift in Sources */,
 				AD0799E42B8F33F800AEFFE7 /* QuestionsView.swift in Sources */,
+				D9CF9E212B938CE000E78E8B /* ClueUIButton.swift in Sources */,
 				A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */,
 				09E3DCE42B90F04500C73649 /* RulesViewController.swift in Sources */,
 				09E3DCE62B90F07400C73649 /* RulesView.swift in Sources */,

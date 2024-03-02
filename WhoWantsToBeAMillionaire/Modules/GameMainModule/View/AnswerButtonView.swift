@@ -44,8 +44,9 @@ final class AnswerButtonView: UIView {
 
 
     // MARK: Init
-    init(image: UIImage?, letter: String, text: String) {
+    init(image: UIImage?, letter: String, index: Int, text: String) {
         self.button.setBackgroundImage(image ?? UIImage(), for: .normal)
+        self.button.tag = index
         self.answerLetterLabel.text = letter
         self.answerTextLabel.text = text
         super.init(frame: .zero)
@@ -92,8 +93,8 @@ final class AnswerButtonView: UIView {
         answerTextLabel.text = text
     }
     
-    func disable() {
-        button.isEnabled = false
+    func disable(_ state: Bool) {
+        button.isEnabled = state
     }
 }
 

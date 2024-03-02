@@ -21,22 +21,16 @@ enum PlayerAction {
     case clue
 }
 
-enum ClueType {
-    case fifty
-    case call
-    case help
-}
-
-
-
 protocol GameServiceViewProtocol: AnyObject {
     
     func correctAnswerSelect()
     func getMoneySelect()
     func incorrectAnswerSelect()
-    func fiftyClue(answer: [String])
+    func incorrectAnswerHighlight()
+    func fiftyClue(answers: [String])
     func callClue(answer: Int)
-    func helpClue(answer: [Int])
+    func helpClue(answers: [Int])
+    func rightToErrorClue(used: Bool)
     
 }
 
@@ -47,8 +41,13 @@ class GameService {
     var questionApi = QuestionsAPI()
     var currentQuestionIndex: Int = 0
     var currentQuestion: GameQuestion?
-    var rightToError: Bool = true
-    
+    var clues = [
+        ClueTypes.call: true,
+        ClueTypes.fifty: true,
+        ClueTypes.help: true,
+        ClueTypes.rightToError: true]
+    var rightToErrorSelect = false
+        
     init() {
         questions = questionApi.fetchData()
     }
@@ -77,12 +76,15 @@ class GameService {
         
     }
     
-    func playerAct(typeOfAction: PlayerAction, answerIndex: Int?, clueType: ClueType?) {
+    func playerAct(typeOfAction: PlayerAction, answerIndex: Int?, clueType: ClueTypes?) {
         switch typeOfAction {
         case .answer:
             guard let answerIndex else { return }
             if answerIndex == currentQuestion?.trueAnswer {
                 view.correctAnswerSelect()
+            } else if rightToErrorSelect == true {
+                view.incorrectAnswerHighlight()
+                rightToErrorSelect = false
             } else {
                 view.incorrectAnswerSelect()
             }
@@ -95,7 +97,7 @@ class GameService {
         }
     }
     
-    func getClue(clueType: ClueType) {
+    func getClue(clueType: ClueTypes) {
         switch clueType {
         case .fifty:
             guard let currentQuestion else { return }
@@ -111,16 +113,20 @@ class GameService {
                     }
                 }
             }
-            view.fiftyClue(answer: answerArray)
+            clues[ClueTypes.fifty] = false
+            view.fiftyClue(answers: answerArray)
         case .call:
             guard let currentQuestion else { return }
             let indexTrueAnswer = currentQuestion.trueAnswer
             var indexCall = 0
+            
             if Int.random(in: 1...5) != 5 {
                 indexCall = indexTrueAnswer
             } else if indexTrueAnswer == 0 {
                 indexCall = Int.random(in: 1...3)
             }
+            
+            clues[ClueTypes.call] = false
             view.callClue(answer: indexCall)
         case .help:
             guard let currentQuestion else { return }
@@ -135,9 +141,15 @@ class GameService {
                     percentageGetHelp[indexTrueAnswer] -= percentageGetHelp[index]
                 }
             }
-            view.helpClue(answer: percentageGetHelp)
+            
+            clues[ClueTypes.help] = false
+            view.helpClue(answers: percentageGetHelp)
+        case .rightToError:
+            rightToErrorSelect = true
+            clues[ClueTypes.rightToError] = false
+            view.rightToErrorClue(used: true)
         }
-        
     }
+    
 }
 

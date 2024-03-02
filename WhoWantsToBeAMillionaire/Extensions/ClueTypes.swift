@@ -27,4 +27,18 @@ enum ClueTypes: String, CaseIterable {
             return UIImage()
         }
     }
+    var imageUsed: UIImage {
+        switch self {
+        case .fifty:
+            return UIImage.CluesImage.clueFiftyPercentUsed ?? UIImage()
+        case .call:
+            return UIImage.CluesImage.clueCallUsed ?? UIImage()
+        case .help:
+            return UIImage.CluesImage.cluePeopleHelpUsed ?? UIImage()
+        case .rightToError:
+            return UIImage.CluesImage.clueRightToErrorUsed ?? UIImage()
+        default:
+            return UIImage()
+        }
+    }
 }

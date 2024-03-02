@@ -13,5 +13,18 @@ final class GameOverViewController: CustomViewController<GameOverView> {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        commonInit()
+    }
+    
+    private func commonInit() {
+        customView.delegate = self
+        customView.configure(attemptsCount: 3)
+    }
+}
+
+// MARK: - GameOverViewDelegate
+extension GameOverViewController: GameOverViewDelegate {
+    func playAgainButtonPressed(_ button: UIButton) {
+        print("Начать игру заново")
     }
 }

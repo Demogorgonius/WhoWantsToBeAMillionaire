@@ -8,9 +8,15 @@
 import UIKit
 import SnapKit
 
+// MARK: - GameOverViewDelegate
+protocol GameOverViewDelegate: AnyObject {
+    func playAgainButtonPressed(_ button: UIButton)
+}
 
 // MARK: - GameOverView
 final class GameOverView: CustomView {
+    
+    weak var delegate: GameOverViewDelegate?
     
     // MARK: Private Properties
     private lazy var backgroundImageView = makeImageView(
@@ -34,6 +40,11 @@ final class GameOverView: CustomView {
     )
     
     private lazy var playAgainButton = makeButton()
+    
+    // MARK: Configure Method
+    func configure(attemptsCount value: Int) {
+        attemptTitleLabel.text = "You losed on \(value) attempt"
+    }
     
     // MARK: Set Views
     override func setViews() {
@@ -82,7 +93,7 @@ extension GameOverView {
     
     @objc
     private func didTapPlayAgainButton(_ button: UIButton) {
-        print("Button tapped")
+        delegate?.playAgainButtonPressed(playAgainButton)
     }
 }
 

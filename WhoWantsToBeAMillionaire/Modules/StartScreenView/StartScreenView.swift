@@ -7,8 +7,15 @@
 
 import UIKit
 import SnapKit
+
+protocol StartScreenViewDelegate: AnyObject {
+    func rulesButton(didTapButton button: UIButton)
+    func startGameButton(didTapButton button: UIButton)
+}
+
 class StartScreenView: CustomView {
-   
+    weak var delegate: StartScreenViewDelegate?
+    
     // Mark: - Views
     let backgroundImageView: UIImageView = {
         let imageView = UIImageView()
@@ -122,6 +129,20 @@ class StartScreenView: CustomView {
             $0.edges.equalToSuperview()
         }
         
+        
+        rulesButton.addTarget(self, action: #selector(didTapRulesButton), for: .touchUpInside)
+        
+        startGameButton.addTarget(self, action: #selector(didTapStartGameButton), for: .touchUpInside)
     }
 
+}
+
+extension StartScreenView {
+    @objc func didTapRulesButton(_ sender: UIButton) {
+        delegate?.rulesButton(didTapButton: sender)
+    }
+    
+    @objc func didTapStartGameButton(_ sender: UIButton) {
+        delegate?.startGameButton(didTapButton: sender)
+    }
 }

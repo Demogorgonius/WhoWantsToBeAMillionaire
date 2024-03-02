@@ -23,7 +23,7 @@ class RegistrationUserService {
         }
     }
     
-    private init() {
+    init() {
         if let savedUsers = defaults.object(forKey: "SavedUsers") as? Data {
             let decoder = JSONDecoder()
             if let loadedUsers = try? decoder.decode([User].self, from: savedUsers) {
@@ -34,8 +34,12 @@ class RegistrationUserService {
         self.users = []
     }
     
-    func saveUser(_ user: User) {
-        users.append(user)
+    func saveUser(name: String, amount: Int?) {
+        users.append(User(name: name, amount: amount ?? 0))
+    }
+    
+    func setAmountForLastUser(_ amount: Int) {
+        users[users.count - 1].amount = amount
     }
     
     func loadUsers() -> [User] {

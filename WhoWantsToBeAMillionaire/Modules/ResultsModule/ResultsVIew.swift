@@ -65,7 +65,6 @@ class ResultsView: CustomView {
         self.addSubview(totalWonLabel)
         resultTableView.delegate = self
         resultTableView.dataSource = self
-        createDataSource()
     }
     
     override func layoutViews() {
@@ -81,21 +80,21 @@ class ResultsView: CustomView {
         }
         
         resultTableView.snp.makeConstraints {
-            $0.top.equalTo(logoImage.snp_bottomMargin).offset(40)
+            $0.top.equalTo(totalWonLabel.snp.bottom).offset(20)
             $0.left.equalToSuperview().offset(45)
             $0.right.equalToSuperview().inset(45)
             $0.bottom.equalToSuperview().offset(45)
         }
         
         totalWonLabel.snp.makeConstraints {
-            $0.top.equalTo(logoImage.snp_bottomMargin).offset(5)
+            $0.top.equalTo(logoImage.snp.bottom).offset(5)
             $0.right.equalToSuperview().inset(50)
             $0.height.equalTo(35)
             $0.width.equalTo(160)
         }
         
         wonLabel.snp.makeConstraints {
-            $0.top.equalTo(logoImage.snp_bottomMargin).offset(5)
+            $0.top.equalTo(logoImage.snp.bottom).offset(5)
             $0.left.equalToSuperview().inset(35)
             $0.height.equalTo(35)
             $0.width.equalTo(160)
@@ -103,10 +102,9 @@ class ResultsView: CustomView {
         
     }
     
-    func createDataSource() {
-        dataSource = RegistrationUserService.shared.loadUsers()
+    func setUsersData(_ data: [User]) {
+        dataSource = data
         resultTableView.reloadData()
-        
     }
     
 }
@@ -123,8 +121,8 @@ extension ResultsView: UITableViewDelegate, UITableViewDataSource {
         }
         
         let item = dataSource[indexPath.row]
-        let name = "\(indexPath.row). \(item.name)"
-        let amount = " \(item.amount) USD"
+        let name = "\(indexPath.row + 1). \(item.name)"
+        let amount = " \(item.amount) RUB"
         cell.setTitles(number: name, score: amount)
         
         return cell

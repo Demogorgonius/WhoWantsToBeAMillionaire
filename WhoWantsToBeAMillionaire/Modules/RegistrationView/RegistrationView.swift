@@ -10,8 +10,7 @@ import SnapKit
 
 
 protocol RegistrationViewDelegate: AnyObject {
-    func registrationButton(didTapButton button: UIButton)
-    func saveUser(user: User)
+    func registrationButton(didTapButton button: UIButton, userName: String)
 }
 
 class RegistrationView: CustomView {
@@ -111,8 +110,7 @@ class RegistrationView: CustomView {
 
 extension RegistrationView {
     @objc func didTapRegistrationButton(_ sender: UIButton) {
-        delegate?.registrationButton(didTapButton: sender)
-        delegate?.saveUser(user: User(name: textField.text ?? "", amount: 0))
+        delegate?.registrationButton(didTapButton: sender, userName: textField.text ?? "")
     }
 }
 

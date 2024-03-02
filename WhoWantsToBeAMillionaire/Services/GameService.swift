@@ -12,7 +12,8 @@ struct GameQuestion {
     let text: String
     let answer: [String]
     let trueAnswer: Int
-    
+    let index: Int
+    let sum: String
 }
 
 enum PlayerAction {
@@ -20,6 +21,8 @@ enum PlayerAction {
     case getMoney
     case clue
 }
+
+let indexSum = [100, 200, 300, 500, 1000, 2000, 4000, 8000, 16000, 32000, 64000, 125000, 250000, 500000, 1000000]
 
 protocol GameServiceViewProtocol: AnyObject {
     
@@ -72,8 +75,16 @@ class GameService {
         ansArray.shuffle()
         return GameQuestion(text: question.text,
                             answer: ansArray,
-                            trueAnswer: ansArray.firstIndex(of: question.correctAnswer) ?? 0)
-        
+                            trueAnswer: ansArray.firstIndex(of: question.correctAnswer) ?? 0,
+                            index: currentQuestionIndex + 1,
+                            sum: makeSum()
+                            )
+    }
+    
+    func makeSum() -> String {
+        let sumInt = indexSum[currentQuestionIndex]
+        let sumString = String(sumInt) + " RUB"
+        return sumString
     }
     
     func playerAct(typeOfAction: PlayerAction, answerIndex: Int?, clueType: ClueTypes?) {

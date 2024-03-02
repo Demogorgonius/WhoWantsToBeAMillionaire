@@ -9,12 +9,13 @@ import UIKit
 import SnapKit
 
 protocol ClueButtonViewDelegate: AnyObject {
-    func clueButtonView(didTapButton button: UIButton)
+    func clueButtonView(didTapButton button: UIButton, clue: ClueTypes)
 }
 
 final class ClueButtonView: UIView {
     
     weak var delegate: ClueButtonViewDelegate?
+    let clue: ClueTypes
     
     private var button: UIButton = {
         let button = UIButton()
@@ -26,11 +27,15 @@ final class ClueButtonView: UIView {
     }()
 
     // MARK: Init
-    init(image: UIImage) {
-        self.button.setBackgroundImage(image, for: .normal)
+    init(_ clue: ClueTypes) {
+        
+        self.clue = clue
+        self.button.setBackgroundImage(clue.image, for: .normal)
         super.init(frame: .zero)
         setViews()
         layoutViews()
+        
+        print("inside \(self.clue)")
     }
 
     required init?(coder: NSCoder) {
@@ -60,6 +65,7 @@ final class ClueButtonView: UIView {
 
 extension ClueButtonView {
     @objc func didTapClueButton(_ sender: UIButton) {
-        delegate?.clueButtonView(didTapButton: sender)
+        print("\(clue)")
+        delegate?.clueButtonView(didTapButton: sender, clue: clue)
     }
 }

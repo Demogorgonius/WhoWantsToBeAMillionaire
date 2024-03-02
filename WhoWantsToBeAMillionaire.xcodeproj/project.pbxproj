@@ -30,7 +30,7 @@
 		AD0799EA2B8F748300AEFFE7 /* QuestionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0799E92B8F748300AEFFE7 /* QuestionHelper.swift */; };
 		D588C67C2B8F3B1700B39884 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588C67B2B8F3B1700B39884 /* Question.swift */; };
 		D588C67E2B8F3DC100B39884 /* QuestionsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D588C67D2B8F3DC100B39884 /* QuestionsAPI.swift */; };
-		D5AFCAFE2B9371DF000B4022 /* Clues.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFCAFD2B9371DF000B4022 /* Clues.swift */; };
+		D5AFCAFE2B9371DF000B4022 /* ClueTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AFCAFD2B9371DF000B4022 /* ClueTypes.swift */; };
 		D9550A622B8FDFB10018AA2C /* GameMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9550A612B8FDFB10018AA2C /* GameMainView.swift */; };
 		D9550A652B8FE3E10018AA2C /* GameMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9550A642B8FE3E10018AA2C /* GameMainViewController.swift */; };
 		D96B366C2B8FF7200094DCA1 /* AnswerButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B366B2B8FF7200094DCA1 /* AnswerButtonView.swift */; };
@@ -92,7 +92,7 @@
 		AD0799E92B8F748300AEFFE7 /* QuestionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionHelper.swift; sourceTree = "<group>"; };
 		D588C67B2B8F3B1700B39884 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		D588C67D2B8F3DC100B39884 /* QuestionsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsAPI.swift; sourceTree = "<group>"; };
-		D5AFCAFD2B9371DF000B4022 /* Clues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clues.swift; sourceTree = "<group>"; };
+		D5AFCAFD2B9371DF000B4022 /* ClueTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueTypes.swift; sourceTree = "<group>"; };
 		D9550A612B8FDFB10018AA2C /* GameMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMainView.swift; sourceTree = "<group>"; };
 		D9550A642B8FE3E10018AA2C /* GameMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMainViewController.swift; sourceTree = "<group>"; };
 		D96B366B2B8FF7200094DCA1 /* AnswerButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButtonView.swift; sourceTree = "<group>"; };
@@ -238,7 +238,7 @@
 				D9E769532B8DF5150096FAEC /* Images.swift */,
 				D973137B2B8DFDBA0046083E /* Sounds.swift */,
 				D973137D2B8DFE930046083E /* Fonts.swift */,
-				D5AFCAFD2B9371DF000B4022 /* Clues.swift */,
+				D5AFCAFD2B9371DF000B4022 /* ClueTypes.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -508,7 +508,7 @@
 				09578BAB2B90CB76008F57D4 /* RegistrationView.swift in Sources */,
 				A5B895692B8D1BDC00A30134 /* CustomView.swift in Sources */,
 				A5AB295C2B925E4D0093B49E /* GameService.swift in Sources */,
-				D5AFCAFE2B9371DF000B4022 /* Clues.swift in Sources */,
+				D5AFCAFE2B9371DF000B4022 /* ClueTypes.swift in Sources */,
 				AD0799E62B8F691E00AEFFE7 /* QuestionView.swift in Sources */,
 				AD0799EA2B8F748300AEFFE7 /* QuestionHelper.swift in Sources */,
 				A5B8956B2B8D1BFD00A30134 /* CustomViewController.swift in Sources */,

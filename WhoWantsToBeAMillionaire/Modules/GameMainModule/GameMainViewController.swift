@@ -10,6 +10,7 @@ import UIKit
 final class GameMainViewController: CustomViewController<GameMainView> {
     
     let musicService = GameMusicService()
+    let gameService = GameService()
     var timer: Timer?
     var waitSeconds: Int = 0
     
@@ -54,8 +55,8 @@ final class GameMainViewController: CustomViewController<GameMainView> {
         waitSeconds = 30
         
         customView.switchTimerHidden(false)
-        startTimer()
-        musicService.waitAnswer()
+//        startTimer()
+//        musicService.waitAnswer()
     }
     
     func goToProgress() {
@@ -67,8 +68,10 @@ final class GameMainViewController: CustomViewController<GameMainView> {
 }
 
 extension GameMainViewController: ClueButtonViewDelegate {
-    func clueButtonView(didTapButton button: UIButton) {
+    func clueButtonView(didTapButton button: UIButton, clue: ClueTypes) {
         print("Clue button is pressed")
+        print("\(clue)")
+        gameService.playerAct(typeOfAction: PlayerAction.clue, answerIndex: nil, clueType: clue)
     }
 }
 
@@ -95,6 +98,6 @@ extension GameMainViewController: GameMainViewDelegate {
         print("GetMoney button is pressed")
         musicService.stopPlaying()
         timer?.invalidate()
-        goToProgress()
+//        goToProgress()
     }
 }

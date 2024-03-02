@@ -212,15 +212,21 @@ extension GameMainView {
     }
     
     private func configureCluesView() {
-        [
-            UIImage.CluesImage.clueFiftyPercent,
-            UIImage.CluesImage.clueCall,
-            UIImage.CluesImage.cluePeopleHelp
-        ].forEach { image in
-            clueButton = ClueButtonView(image: image!)
+        ClueTypes.allCases.forEach { clue in
+            print("outside \(clue)")
+            clueButton = ClueButtonView(clue)
             clueButton?.delegate = self
             cluesHStack.addArrangedSubview(clueButton!)
         }}
+//        [
+//            UIImage.CluesImage.clueFiftyPercent,
+//            UIImage.CluesImage.clueFiftyPercent,
+//            UIImage.CluesImage.cluePeopleHelp
+//        ].forEach { image in
+//            clueButton = ClueButtonView(image: image!, value)
+//            clueButton?.delegate = self
+//            cluesHStack.addArrangedSubview(clueButton!)
+//        }}
 }
 
 
@@ -271,7 +277,7 @@ extension GameMainView: AnswerButtonViewDelegate {
 }
 
 extension GameMainView: ClueButtonViewDelegate {
-    func clueButtonView(didTapButton button: UIButton) {
+    func clueButtonView(didTapButton button: UIButton, clue: ClueTypes) {
         clueButton?.didTapClueButton(button)
     }
 }

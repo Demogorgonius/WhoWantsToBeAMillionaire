@@ -89,7 +89,7 @@ class StartScreenView: CustomView {
     override func layoutViews() {
         
         logoImageView.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(41)
+            $0.top.equalToSuperview().offset(65)
             $0.centerX.equalToSuperview()
             $0.width.height.equalTo(225)
         }

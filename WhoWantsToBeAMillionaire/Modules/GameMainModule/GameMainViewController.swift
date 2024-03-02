@@ -55,7 +55,7 @@ final class GameMainViewController: CustomViewController<GameMainView> {
     func waitForAnswer() {
         waitSeconds = 30
         startTimer()
-        musicService.waitAnswer()
+//        musicService.waitAnswer()
     }
     
     func goToProgress() {
@@ -75,10 +75,15 @@ extension GameMainViewController: ClueButtonViewDelegate {
 extension GameMainViewController: AnswerButtonViewDelegate {
     func answerButtonView(didTapButton button: UIButton) {
         print("Answer button is pressed")
+        button.setBackgroundImage(UIImage.ButtomImage.buttonGreen, for: .normal)
+        button.startFlick()
+        customView.disableButtons(false)
         musicService.answerSelected()
         timer?.invalidate()
         DispatchQueue.main.asyncAfter(deadline: .now() + 5){
-            self.gameService.playerAct(typeOfAction: PlayerAction.answer, answerIndex: 0, clueType: nil)
+            self.gameService.playerAct(typeOfAction: PlayerAction.answer, answerIndex: button.tag, clueType: nil)
+            self.customView.disableButtons(true)
+            button.stopFlick()
         }
     }
 }

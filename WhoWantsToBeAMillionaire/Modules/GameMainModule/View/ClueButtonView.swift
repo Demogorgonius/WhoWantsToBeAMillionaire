@@ -51,8 +51,8 @@ final class ClueButtonView: UIView {
         button.addTarget(self, action: #selector(didTapClueButton), for: .touchUpInside)
     }
     
-    func disable() {
-        button.isEnabled = false
+    func disable(_ state: Bool) {
+        button.isEnabled = state
     }
 }
 

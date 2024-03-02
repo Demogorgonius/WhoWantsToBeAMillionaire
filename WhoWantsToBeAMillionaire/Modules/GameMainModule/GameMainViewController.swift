@@ -54,15 +54,11 @@ final class GameMainViewController: CustomViewController<GameMainView> {
     
     func waitForAnswer() {
         waitSeconds = 30
-        
-        customView.switchTimerHidden(false)
-        //        startTimer()
-        //        musicService.waitAnswer()
+        startTimer()
+        musicService.waitAnswer()
     }
     
     func goToProgress() {
-        
-        
         let progressController = QuestionsViewController()
         navigationController?.pushViewController(progressController, animated: true)
     }
@@ -71,20 +67,18 @@ final class GameMainViewController: CustomViewController<GameMainView> {
 extension GameMainViewController: ClueButtonViewDelegate {
     func clueButtonView(didTapButton button: ClueUIButton, clue: ClueTypes) {
         print("Clue button is pressed: \(clue)")
-        
         gameService.playerAct(typeOfAction: PlayerAction.clue, answerIndex: nil, clueType: clue)
     }
 }
 
 extension GameMainViewController: AnswerButtonViewDelegate {
     func answerButtonView(didTapButton button: UIButton) {
-        waitSeconds = 5
-        startTimer()
         print("Answer button is pressed")
         musicService.answerSelected()
-        customView.switchTimerHidden(true)
-        
-        gameService.playerAct(typeOfAction: PlayerAction.answer, answerIndex: 0, clueType: nil)
+        timer?.invalidate()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+            self.gameService.playerAct(typeOfAction: PlayerAction.answer, answerIndex: 0, clueType: nil)
+        }
     }
 }
 extension GameMainViewController: GameMainViewDelegate {
@@ -117,18 +111,15 @@ extension GameMainViewController: GameServiceViewProtocol {
     }
     
     func callClue(answer: Int) {
-        
-        customView.disableClue(.call)
     }
     
     func helpClue(answers: [Int]) {
-        
-        customView.disableClue(.help)
     }
     
-    func oneErrorClue(used: Bool) {
-        
-//        customView.disableClue(.error)
+    func rightToErrorClue(used: Bool) {
+    }
+    
+    func incorrectAnswerHighlight() {
     }
     
     

@@ -181,10 +181,6 @@ class GameMainView: CustomView {
         timerLabel.text = String(value)
     }
     
-    func switchTimerHidden(_ isHidden: Bool){
-        timerLabel.isHidden = isHidden
-    }
-    
     func disableButtons() {
         for view in answersVStack.subviews {
             if let button = view as? AnswerButtonView {

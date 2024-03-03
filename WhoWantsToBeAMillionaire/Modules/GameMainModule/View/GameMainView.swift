@@ -17,6 +17,9 @@ class GameMainView: CustomView {
     var answerButton: AnswerButtonView?
     var clueButton: ClueButtonView?
     var graphVC: GraphView?
+    
+    
+    var availableClues: [ClueTypes]  = [.fifty, .help, .rightToError]
     weak var delegate: GameMainViewDelegate?
     
     fileprivate var question: GameQuestion?
@@ -267,7 +270,7 @@ extension GameMainView {
     }
     
     private func configureCluesView() {
-        ClueTypes.allCases.forEach { clue in
+        availableClues.forEach { clue in
             clueButton = ClueButtonView(clue)
             clueButton?.delegate = self
             cluesHStack.addArrangedSubview(clueButton!)

@@ -33,7 +33,6 @@ protocol GameServiceViewProtocol: AnyObject {
     func fiftyClue(answers: [String])
     func callClue(answer: Int)
     func helpClue(answers: [Int])
-    func rightToErrorClue(used: Bool)
     
 }
 
@@ -42,7 +41,7 @@ class GameService {
     weak var view: GameServiceViewProtocol!
     var questions: [Question] = []
     var questionApi = QuestionsAPI()
-    var currentQuestionIndex: Int = 0
+    var currentQuestionIndex: Int = 14
     var currentQuestion: GameQuestion?
     var currentAnswerButtonIndex: Int = 0
     var cluesAvailability = [
@@ -158,7 +157,6 @@ class GameService {
         case .rightToError:
             rightToErrorSelect = true
             cluesAvailability[ClueTypes.rightToError] = false
-            view.rightToErrorClue(used: true)
         }
     }
     

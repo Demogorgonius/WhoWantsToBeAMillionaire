@@ -28,23 +28,19 @@ final class GameOverView: CustomView {
     )
     
     private lazy var attemptTitleLabel = makeLabel(
-        title: "You losed on {attempt} attempt",
+        title: "",
         font: UIFont.RobotoFont.Regular.size(of: 24),
         textColor: UIColor(named: "custom-white")
     )
     
     private lazy var loseTitleLabel = makeLabel(
-        title: "LOSE",
-        font: UIFont.SyneFont.Regular.size(of: 50),
+        title: "",
+        font: UIFont.RobotoFont.Bold.size(of: 30),
         textColor: UIColor(named: "custom-orange")
     )
     
     private lazy var playAgainButton = makeButton()
     
-    // MARK: Configure Method
-    func configure(attemptsCount value: Int) {
-        attemptTitleLabel.text = "You losed on \(value) attempt"
-    }
     
     // MARK: Set Views
     override func setViews() {
@@ -85,6 +81,14 @@ final class GameOverView: CustomView {
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-50)
         }
     }
+    
+    func setAttemptTitleLabelText(_ text: String) {
+        attemptTitleLabel.text = text
+    }
+    
+    func setLoseTitleLabel(_ text: String) {
+        loseTitleLabel.text = text
+    }
 }
 
 
@@ -120,7 +124,7 @@ extension GameOverView {
     private func makeButton() -> UIButton {
         let button = UIButton()
         button.configuration = .filled()
-        button.configuration?.title = "PLAY AGAIN"
+        button.configuration?.title = "ИГРАТЬ ОПЯТЬ"
         button.configuration?.cornerStyle = .medium
         button.configuration?.attributedTitle?.font = UIFont.RobotoFont.Medium.size(of: 36)
         button.configuration?.baseForegroundColor = UIColor(named: "custom-white")

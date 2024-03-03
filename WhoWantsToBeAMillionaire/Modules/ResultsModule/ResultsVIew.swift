@@ -34,35 +34,11 @@ class ResultsView: CustomView {
         return tableView
     }()
     
-    let wonLabel: UILabel = {
-        let label = UILabel()
-        label.text = "You won:"
-        let customTextColor = UIColor(named: "custom-white")
-        label.textColor = customTextColor
-        label.font = UIFont.TextFont.Question.label
-        label.textAlignment = .left
-        label.numberOfLines = 1
-        return label
-    }()
-    
-    let totalWonLabel: UILabel = {
-        let label = UILabel()
-        label.text = "1000"
-        let customTextColor = UIColor(named: "custom-white")
-        label.textColor = customTextColor
-        label.font = UIFont.TextFont.Question.label
-        label.textAlignment = .right
-        label.numberOfLines = 1
-        return label
-    }()
-    
     
     override func setViews() {
         self.addSubview(backgroundImageView)
         self.addSubview(logoImage)
         self.addSubview(resultTableView)
-        self.addSubview(wonLabel)
-        self.addSubview(totalWonLabel)
         resultTableView.delegate = self
         resultTableView.dataSource = self
     }
@@ -80,26 +56,11 @@ class ResultsView: CustomView {
         }
         
         resultTableView.snp.makeConstraints {
-            $0.top.equalTo(totalWonLabel.snp.bottom).offset(20)
+            $0.top.equalTo(logoImage.snp.bottom).offset(20)
             $0.left.equalToSuperview().offset(45)
             $0.right.equalToSuperview().inset(45)
             $0.bottom.equalToSuperview().offset(45)
         }
-        
-        totalWonLabel.snp.makeConstraints {
-            $0.top.equalTo(logoImage.snp.bottom).offset(5)
-            $0.right.equalToSuperview().inset(50)
-            $0.height.equalTo(35)
-            $0.width.equalTo(160)
-        }
-        
-        wonLabel.snp.makeConstraints {
-            $0.top.equalTo(logoImage.snp.bottom).offset(5)
-            $0.left.equalToSuperview().inset(35)
-            $0.height.equalTo(35)
-            $0.width.equalTo(160)
-        }
-        
     }
     
     func setUsersData(_ data: [User]) {

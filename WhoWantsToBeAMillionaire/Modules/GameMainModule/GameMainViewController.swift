@@ -29,6 +29,10 @@ final class GameMainViewController: CustomViewController<GameMainView> {
         super.viewWillAppear(animated)
         customView.updateCluesState(state: gameService.cluesAvailability)
         setQuestion()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         waitForAnswer()
     }
     
@@ -61,8 +65,8 @@ final class GameMainViewController: CustomViewController<GameMainView> {
 //        musicService.waitAnswer()
     }
     
-    func goToProgress(_ bool: Bool) {
-        let progressController = QuestionsViewController(number: gameService.currentQuestionIndex - 1, progressType: bool ? .win : .loose )
+    func goToProgress(_ type: ProgressType) {
+        let progressController = QuestionsViewController(number: gameService.currentQuestionIndex - 1, progressType: type)
         navigationController?.pushViewController(progressController, animated: true)
     }
     
@@ -104,19 +108,19 @@ extension GameMainViewController: GameMainViewDelegate {
 
 extension GameMainViewController: GameServiceViewProtocol {
     func correctAnswerSelect() {
-        musicService.rightAnswer()
-        goToProgress(true)
+        musicService.stopPlaying()
+        goToProgress(.win)
     }
     
     func getMoneySelect() {
         musicService.stopPlaying()
         timer?.invalidate()
-        goToProgress(true)
+        goToProgress(.getMoney)
     }
     
     func incorrectAnswerSelect() {
-        musicService.wrongAnswer()
-        goToProgress(false)
+        musicService.stopPlaying()
+        goToProgress(.loose)
     }
     
     func fiftyClue(answers: [String]) {
@@ -130,9 +134,6 @@ extension GameMainViewController: GameServiceViewProtocol {
     
     func helpClue(answers: [Int]) {
         customView.showGraphView(precent: answers)
-    }
-    
-    func rightToErrorClue(used: Bool) {
     }
     
     func incorrectAnswerHighlight(answer: Int) {

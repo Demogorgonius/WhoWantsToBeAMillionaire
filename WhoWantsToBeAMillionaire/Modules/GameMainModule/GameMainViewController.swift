@@ -28,6 +28,7 @@ final class GameMainViewController: CustomViewController<GameMainView> {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        customView.updateCluesState(state: gameService.cluesAvailability)
         setQuestion()
         waitForAnswer()
     }

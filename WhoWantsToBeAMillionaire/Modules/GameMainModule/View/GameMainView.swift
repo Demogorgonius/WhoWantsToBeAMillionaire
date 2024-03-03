@@ -232,12 +232,21 @@ class GameMainView: CustomView {
     }
     
     func showGraphView(precent: [Int]) {
-            graphVC = GraphView(with: precent)
-            guard let graphVC else { return }
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
-            graphVC.addGestureRecognizer(tap)
-            addSubview(graphVC)
+        graphVC = GraphView(with: precent)
+        guard let graphVC else { return }
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+        graphVC.addGestureRecognizer(tap)
+        addSubview(graphVC)
+    }
+    
+    func updateCluesState(state: [ClueTypes: Bool]) {
+        for view in cluesHStack.subviews {
+            if let button = view as? ClueButtonView {
+                let clue = button.getClue()
+                button.disable(state[clue] ?? true)
+            }
         }
+    }
 
 }
 

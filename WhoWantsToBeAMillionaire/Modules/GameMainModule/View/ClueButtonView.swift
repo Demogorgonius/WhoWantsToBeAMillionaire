@@ -16,6 +16,10 @@ final class ClueButtonView: UIView {
     
     weak var delegate: ClueButtonViewDelegate?
     
+    func getClue() -> ClueTypes {
+        return button.clue!
+    }
+    
     private var button: ClueUIButton = {
         let button = ClueUIButton()
         button.backgroundColor = .clear

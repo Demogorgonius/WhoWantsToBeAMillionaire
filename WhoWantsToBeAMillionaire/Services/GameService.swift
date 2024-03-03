@@ -45,7 +45,7 @@ class GameService {
     var currentQuestionIndex: Int = 0
     var currentQuestion: GameQuestion?
     var currentAnswerButtonIndex: Int = 0
-    var clues = [
+    var cluesAvailability = [
         ClueTypes.call: true,
         ClueTypes.fifty: true,
         ClueTypes.help: true,
@@ -122,7 +122,7 @@ class GameService {
                     delCount += 1
                 }
             }
-            clues[ClueTypes.fifty] = false
+            cluesAvailability[ClueTypes.fifty] = false
             view.fiftyClue(answers: answerArray)
         case .call:
             guard let currentQuestion else { return }
@@ -137,7 +137,7 @@ class GameService {
                 indexCall = indexes.randomElement()!
             }
             
-            clues[ClueTypes.call] = false
+            cluesAvailability[ClueTypes.call] = false
             view.callClue(answer: indexCall)
         case .help:
             guard let currentQuestion else { return }
@@ -153,11 +153,11 @@ class GameService {
                 }
             }
             
-            clues[ClueTypes.help] = false
+            cluesAvailability[ClueTypes.help] = false
             view.helpClue(answers: percentageGetHelp)
         case .rightToError:
             rightToErrorSelect = true
-            clues[ClueTypes.rightToError] = false
+            cluesAvailability[ClueTypes.rightToError] = false
             view.rightToErrorClue(used: true)
         }
     }

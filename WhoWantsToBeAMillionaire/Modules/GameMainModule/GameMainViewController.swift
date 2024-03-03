@@ -128,7 +128,7 @@ extension GameMainViewController: GameServiceViewProtocol {
     }
     
     func helpClue(answers: [Int]) {
-        customView.showGraphView()
+        customView.showGraphView(precent: answers)
     }
     
     func rightToErrorClue(used: Bool) {

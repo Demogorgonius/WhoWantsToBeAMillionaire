@@ -140,7 +140,7 @@ class GameService {
             view.callClue(answer: indexCall)
         case .help:
             guard let currentQuestion else { return }
-            var percentageGetHelp: [Int] = []
+            var percentageGetHelp: [Int] = [0,0,0,0]
             let indexTrueAnswer = currentQuestion.trueAnswer
             percentageGetHelp[indexTrueAnswer] = 100
             for index in 0...3 {

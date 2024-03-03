@@ -91,8 +91,6 @@ extension GameMainViewController: AnswerButtonViewDelegate {
             self.customView.disableButtons(true)
             button.stopFlick()
             self.customView.setDefaultButtonState(button.tag)
-//            button.setImage(UIImage.ButtomImage.buttonBlue!, for: .normal)
-//            button.contentMode = .scaleToFill
         }
     }
 }

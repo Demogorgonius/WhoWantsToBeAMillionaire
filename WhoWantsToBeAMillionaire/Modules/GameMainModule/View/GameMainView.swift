@@ -198,7 +198,7 @@ class GameMainView: CustomView {
             }
         }
         
-        getMoneyButton.isEnabled = false
+        getMoneyButton.isEnabled = state
     }
     
     func disableEmptyAnswers() {

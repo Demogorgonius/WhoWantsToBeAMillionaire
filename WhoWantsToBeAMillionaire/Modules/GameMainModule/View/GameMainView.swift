@@ -226,12 +226,12 @@ class GameMainView: CustomView {
         }
     }
     
-    func setDefaultButtonState(_ answerIndex: Int) {
-        
-        if let button = answersVStack.subviews[answerIndex] as? AnswerButtonView {
-            button.changeButtonState(image: UIImage.ButtomImage.buttonBlue ?? UIImage())
+    func setDefaultButtonsState() {
+        for view in answersVStack.subviews {
+            if let button = view as? AnswerButtonView {
+                button.changeButtonState(image: UIImage.ButtomImage.buttonBlue ?? UIImage())
+            }
         }
-        
     }
     
     func showGraphView(precent: [Int]) {

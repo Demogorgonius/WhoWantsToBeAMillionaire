@@ -27,6 +27,7 @@ final class GameMainViewController: CustomViewController<GameMainView> {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        customView.setDefaultButtonsState()
         customView.updateCluesState(state: gameService.cluesAvailability)
         setQuestion()
     }
@@ -55,6 +56,7 @@ final class GameMainViewController: CustomViewController<GameMainView> {
         if (waitSeconds == 0) {
             timer?.invalidate()
             musicService.stopPlaying()
+            incorrectAnswerSelect()
         }
         customView.updateTimerLabel(waitSeconds)
     }
@@ -95,7 +97,7 @@ extension GameMainViewController: AnswerButtonViewDelegate {
             self.gameService.playerAct(typeOfAction: PlayerAction.answer, answerIndex: button.tag, clueType: nil)
             self.customView.disableButtons(true)
             button.stopFlick()
-            self.customView.setDefaultButtonState(button.tag)
+            self.customView.updateCluesState(state: self.gameService.cluesAvailability)
         }
     }
 }

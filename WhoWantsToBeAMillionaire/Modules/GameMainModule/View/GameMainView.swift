@@ -173,7 +173,7 @@ class GameMainView: CustomView {
     }
     
     func setQuestionAnswers(_ answers: [String]) {
-        var localAnswers = answers
+        let localAnswers = answers
         for (index, view) in answersVStack.subviews.enumerated() {
             if let button = view as? AnswerButtonView {
                 button.setAnswerTextLabel(localAnswers[index]) 

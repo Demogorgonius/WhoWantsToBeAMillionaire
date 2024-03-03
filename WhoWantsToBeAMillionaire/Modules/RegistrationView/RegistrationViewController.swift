@@ -12,6 +12,7 @@ class RegistrationViewController: CustomViewController<RegistrationView> {
     let registrationUserService = RegistrationUserService()
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         customView.delegate = self
     }
 }

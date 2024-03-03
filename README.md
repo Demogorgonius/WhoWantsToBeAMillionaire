@@ -1,6 +1,7 @@
 **Who wants to be a Millionaire**
 
 *Stack:* UIKit \ SnapKit
+
 Возможность выиграть 1000000 RUB, ответив на 15 вопросов
 
 *Особенности:*

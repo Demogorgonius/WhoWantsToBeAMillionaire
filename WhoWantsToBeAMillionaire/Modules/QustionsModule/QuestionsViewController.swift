@@ -73,7 +73,7 @@ final class QuestionsViewController: CustomViewController<QuestionsView> {
             print("недопустимый индекс")
             return
         }
-        customView.changeBackgroundColor(at: index)
+        customView.changeBackgroundColor(at: index, type: progressType)
     }
     
     // Активация музыки.
@@ -92,7 +92,7 @@ final class QuestionsViewController: CustomViewController<QuestionsView> {
             case .win:
                 self.navigationController?.popViewController(animated: true)
             case .loose:
-                self.navigationController?.popViewController(animated: true)
+                self.navigationController?.pushViewController(GameOverViewController(), animated: true)
             }
         }
     }

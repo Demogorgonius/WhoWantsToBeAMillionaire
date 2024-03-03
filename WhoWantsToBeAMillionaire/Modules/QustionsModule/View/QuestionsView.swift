@@ -56,11 +56,19 @@ final class QuestionsView: CustomView {
         }
     }
     
-    func changeBackgroundColor(at index: Int) {
-        let currentImage = index <= 13 ? UIImage.ButtomImage.buttonGreen : UIImage.ButtomImage.buttonGold
-        if let view = questionsVStack.subviews.reversed()[index] as? QuestionView {
-            view.updateImage(with: currentImage ?? UIImage())
+    func changeBackgroundColor(at index: Int, type: ProgressType) {
+        if type == .win {
+            let currentImage = index <= 13 ? UIImage.ButtomImage.buttonGreen : UIImage.ButtomImage.buttonGold
+            if let view = questionsVStack.subviews.reversed()[index] as? QuestionView {
+                view.updateImage(with: currentImage ?? UIImage())
+            }
+        } else if type == .loose {
+            let currentImage = index <= 13 ? UIImage.ButtomImage.buttonRed : UIImage.ButtomImage.buttonRed
+            if let view = questionsVStack.subviews.reversed()[index] as? QuestionView {
+                view.updateImage(with: currentImage ?? UIImage())
+            }
         }
+        
     }
 }
 

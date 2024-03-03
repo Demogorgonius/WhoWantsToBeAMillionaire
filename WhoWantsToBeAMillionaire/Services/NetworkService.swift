@@ -24,7 +24,9 @@ class NetworkService: NetworkServiceProtocol {
             switch result {
             case .success(let data):
                 do {
-                    let questionData = try JSONDecoder().decode(QuestionModel.self, from: data)
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let questionData = try decoder.decode(QuestionModel.self, from: data)
                     completionBlock(.success(questionData))
                 } catch let error as NSError {
                     completionBlock(.failure(error))

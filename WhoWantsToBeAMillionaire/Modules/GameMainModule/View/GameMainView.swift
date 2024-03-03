@@ -174,9 +174,9 @@ class GameMainView: CustomView {
     
     func setQuestionAnswers(_ answers: [String]) {
         var localAnswers = answers
-        for view in answersVStack.subviews {
+        for (index, view) in answersVStack.subviews.enumerated() {
             if let button = view as? AnswerButtonView {
-                button.setAnswerTextLabel(localAnswers.removeLast())
+                button.setAnswerTextLabel(localAnswers[index]) 
             }
         }
     }

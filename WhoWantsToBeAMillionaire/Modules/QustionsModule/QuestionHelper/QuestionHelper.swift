@@ -27,33 +27,33 @@ enum QuestionHelper: String, CaseIterable {
     var price: String {
         switch self {
         case .one:
-            "100 RUB"
+            "100 руб"
         case .two:
-            "200 RUB"
+            "200 руб"
         case .three:
-            "300 RUB"
+            "300 руб"
         case .four:
-            "500 RUB"
+            "500 руб"
         case .five:
-            "1000 RUB"
+            "1000 руб"
         case .six:
-            "2000 RUB"
+            "2000 руб"
         case .seven:
-            "4000 RUB"
+            "4000 руб"
         case .eight:
-            "8000 RUB"
+            "8000 руб"
         case .nine:
-            "16000 RUB"
+            "16000 руб"
         case .ten:
-            "32000 RUB"
+            "32000 руб"
         case .eleven:
-            "64000 RUB"
+            "64000 руб"
         case .twelve:
-            "125000 RUB"
+            "125000 руб"
         case .thirteen:
-            "250000 RUB"
+            "250000 руб"
         case .fourteen:
-            "500000 RUB"
+            "500000 руб"
         case .fifteen:
             "1 Миллион"
         }

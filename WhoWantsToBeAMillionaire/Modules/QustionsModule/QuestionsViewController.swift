@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum ProgressType {
+    case newGame
+    case win
+    case loose
+}
+
 final class QuestionsViewController: CustomViewController<QuestionsView> {
     
     private let musicService = GameMusicService()
@@ -17,10 +23,22 @@ final class QuestionsViewController: CustomViewController<QuestionsView> {
     /// выбор проигрываемой мелодии в зависимости от правильности ответа
     private var isCorrect: Bool
     
+    private var progressType: ProgressType
+    
     // MARK: Init
-    init(number: Int, isCorrect: Bool) {
+    init(number: Int, progressType: ProgressType) {
         self.questionIndex = number
-        self.isCorrect = isCorrect
+        
+        self.progressType = progressType
+        switch progressType {
+        case .newGame:
+            isCorrect = true
+            questionIndex = 0
+        case .win:
+            isCorrect = true
+        case .loose:
+            isCorrect = false
+        }
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -35,9 +53,12 @@ final class QuestionsViewController: CustomViewController<QuestionsView> {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        playSound()
+        if progressType != .newGame {
+            playSound()
+            changeProgressColor(questionIndex)
+        }
         popView()
-        changeProgressColor(questionIndex)
+        
     }
     
     
@@ -64,7 +85,15 @@ final class QuestionsViewController: CustomViewController<QuestionsView> {
     private func popView() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             self.musicService.stopPlaying()
-            self.navigationController?.popViewController(animated: true)
+            switch self.progressType {
+            case .newGame:
+                let vc = GameMainViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            case .win:
+                self.navigationController?.popViewController(animated: true)
+            case .loose:
+                self.navigationController?.popViewController(animated: true)
+            }
         }
     }
 }

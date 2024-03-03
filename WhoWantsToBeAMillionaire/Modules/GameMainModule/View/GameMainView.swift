@@ -223,8 +223,8 @@ class GameMainView: CustomView {
         }
     }
     
-    func showGraphView() {
-            graphVC = GraphView(with: [5,10,80,5])
+    func showGraphView(precent: [Int]) {
+            graphVC = GraphView(with: precent)
             guard let graphVC else { return }
             let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
             graphVC.addGestureRecognizer(tap)

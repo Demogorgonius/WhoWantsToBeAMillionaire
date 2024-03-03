@@ -6,14 +6,17 @@
 //
 
 import Foundation
+struct QuestionModel: Codable {
+    var questions: [Question]?
+}
 
-struct Question {
-    var type: String
-    var difficulty: String
-    var category: String
-    var text: String
-    var correctAnswer: String
-    var incorrectAnswers: [String]
+struct Question: Codable, Equatable {
+    let type: String
+    let difficulty: String
+    let category: String
+    let text: String
+    let correctAnswer: String
+    let incorrectAnswers: [String]
     
     init(t: String, d: String, c: String, q: String, cA: String, iA: [String]) {
         type = t

@@ -7,7 +7,11 @@
 
 import UIKit
 import SnapKit
+
+
+
 class StartScreenViewController: CustomViewController<StartScreenView> {
+    
     
     override func viewDidLoad() {
         
@@ -15,6 +19,9 @@ class StartScreenViewController: CustomViewController<StartScreenView> {
         
         customView.delegate = self
     }
+    
+    
+    
 }
 
 extension StartScreenViewController: StartScreenViewDelegate {

@@ -21,6 +21,8 @@
 		A5AB29642B9421EB0093B49E /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB29632B9421EB0093B49E /* ViewFactory.swift */; };
 		A5AB29662B94220D0093B49E /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB29652B94220D0093B49E /* LabelFactory.swift */; };
 		A5AB29682B9422460093B49E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB29672B9422460093B49E /* GraphView.swift */; };
+		A5AB296A2B946E320093B49E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB29692B946E320093B49E /* NetworkService.swift */; };
+		A5AB296C2B946FE10093B49E /* NetworkErrorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB296B2B946FE10093B49E /* NetworkErrorList.swift */; };
 		A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895472B8BE18200A30134 /* AppDelegate.swift */; };
 		A5B8954A2B8BE18200A30134 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895492B8BE18200A30134 /* SceneDelegate.swift */; };
 		A5B895512B8BE18300A30134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B895502B8BE18300A30134 /* Assets.xcassets */; };
@@ -94,6 +96,8 @@
 		A5AB29632B9421EB0093B49E /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		A5AB29652B94220D0093B49E /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 		A5AB29672B9422460093B49E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		A5AB29692B946E320093B49E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A5AB296B2B946FE10093B49E /* NetworkErrorList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorList.swift; sourceTree = "<group>"; };
 		A5B895442B8BE18200A30134 /* WhoWantsToBeAMillionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoWantsToBeAMillionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B895472B8BE18200A30134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B895492B8BE18200A30134 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 				D9CEFE092B8FA3320009949C /* AudioPlayer.swift */,
 				D9B3E5772B935BA500E44677 /* GameMusicService.swift */,
 				A5AB295B2B925E4D0093B49E /* GameService.swift */,
+				A5AB29692B946E320093B49E /* NetworkService.swift */,
+				A5AB296B2B946FE10093B49E /* NetworkErrorList.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -542,11 +548,13 @@
 				D96B366C2B8FF7200094DCA1 /* AnswerButtonView.swift in Sources */,
 				A5AB29662B94220D0093B49E /* LabelFactory.swift in Sources */,
 				D9CF9E232B93C28000E78E8B /* UIButton.swift in Sources */,
+				A5AB296C2B946FE10093B49E /* NetworkErrorList.swift in Sources */,
 				D973137E2B8DFE930046083E /* Fonts.swift in Sources */,
 				A5B895642B8BE28900A30134 /* MainViewController.swift in Sources */,
 				09578BA92B90C30B008F57D4 /* StartScreenView.swift in Sources */,
 				09ACC9672B8FBEE100FA0CA2 /* StartScreenViewController.swift in Sources */,
 				09ACC9692B8FBF2E00FA0CA2 /* RegistrationViewController.swift in Sources */,
+				A5AB296A2B946E320093B49E /* NetworkService.swift in Sources */,
 				D588C67E2B8F3DC100B39884 /* QuestionsAPI.swift in Sources */,
 				D9B3E5782B935BA500E44677 /* GameMusicService.swift in Sources */,
 				098E046E2B936F78006090C0 /* ResultsView.swift in Sources */,

@@ -223,6 +223,14 @@ class GameMainView: CustomView {
         }
     }
     
+    func setDefaultButtonState(_ answerIndex: Int) {
+        
+        if let button = answersVStack.subviews[answerIndex] as? AnswerButtonView {
+            button.changeButtonState(image: UIImage.ButtomImage.buttonBlue ?? UIImage())
+        }
+        
+    }
+    
     func showGraphView(precent: [Int]) {
             graphVC = GraphView(with: precent)
             guard let graphVC else { return }
@@ -234,7 +242,7 @@ class GameMainView: CustomView {
 }
 
 extension GameMainView {
-    private func configureAnswersView() {
+    func configureAnswersView() {
         let letters = ["A": 0, "B": 1 , "C": 2, "D": 3]
         letters.keys.sorted().forEach{ key in
             answerButton = AnswerButtonView(

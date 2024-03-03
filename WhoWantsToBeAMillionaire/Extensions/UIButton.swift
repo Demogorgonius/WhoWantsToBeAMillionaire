@@ -28,4 +28,8 @@ extension UIButton {
         self.alpha = 1.0
     }
     
+    func resetImage() {
+        self.setImage(UIImage.ButtomImage.buttonBlue!, for: .normal)
+    }
+    
 }

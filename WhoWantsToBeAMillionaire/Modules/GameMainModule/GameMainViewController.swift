@@ -61,7 +61,7 @@ final class GameMainViewController: CustomViewController<GameMainView> {
     }
     
     func goToProgress(_ bool: Bool) {
-        let progressController = QuestionsViewController(number: gameService.currentQuestionIndex, progressType: bool ? .win : .loose )
+        let progressController = QuestionsViewController(number: gameService.currentQuestionIndex - 1, progressType: bool ? .win : .loose )
         navigationController?.pushViewController(progressController, animated: true)
     }
     
@@ -73,7 +73,6 @@ final class GameMainViewController: CustomViewController<GameMainView> {
 
 extension GameMainViewController: ClueButtonViewDelegate {
     func clueButtonView(didTapButton button: ClueUIButton) {
-        print("Clue button is pressed: \(button.clue)")
         button.useClue()
         gameService.playerAct(typeOfAction: PlayerAction.clue, answerIndex: nil, clueType: button.clue)
     }
@@ -91,6 +90,9 @@ extension GameMainViewController: AnswerButtonViewDelegate {
             self.gameService.playerAct(typeOfAction: PlayerAction.answer, answerIndex: button.tag, clueType: nil)
             self.customView.disableButtons(true)
             button.stopFlick()
+            self.customView.setDefaultButtonState(button.tag)
+//            button.setImage(UIImage.ButtomImage.buttonBlue!, for: .normal)
+//            button.contentMode = .scaleToFill
         }
     }
 }
@@ -138,7 +140,6 @@ extension GameMainViewController: GameServiceViewProtocol {
         customView.highlightAnswer(answer)
         customView.disableAnswer(answer)
     }
-    
     
 }
 

@@ -94,7 +94,7 @@ final class AnswerButtonView: UIView {
     }
     
     func disable(_ state: Bool) {
-        button.isEnabled = state
+        button.isUserInteractionEnabled = state
     }
     
     

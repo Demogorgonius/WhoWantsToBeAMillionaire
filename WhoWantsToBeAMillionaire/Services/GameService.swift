@@ -44,6 +44,7 @@ class GameService {
     var questionApi = QuestionsAPI()
     var currentQuestionIndex: Int = 0
     var currentQuestion: GameQuestion?
+    var currentAnswerButtonIndex: Int = 0
     var clues = [
         ClueTypes.call: true,
         ClueTypes.fifty: true,

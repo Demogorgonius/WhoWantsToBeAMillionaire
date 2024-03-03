@@ -19,8 +19,8 @@ class RegistrationViewController: CustomViewController<RegistrationView> {
 extension RegistrationViewController: RegistrationViewDelegate {    
     func registrationButton(didTapButton button: UIButton, userName: String) {
         registrationUserService.saveUser(name: userName, amount: 0)
-        let gameMainViewController = GameMainViewController()
-        navigationController?.pushViewController(gameMainViewController, animated: true)
+        let progVC = QuestionsViewController(number: 0, progressType: .newGame)
+        navigationController?.pushViewController(progVC, animated: true)
     }
 }
 

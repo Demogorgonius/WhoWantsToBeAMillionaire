@@ -61,7 +61,7 @@ final class GameMainViewController: CustomViewController<GameMainView> {
     }
     
     func goToProgress(_ bool: Bool) {
-        let progressController = QuestionsViewController(number: gameService.currentQuestionIndex, isCorrect: bool)
+        let progressController = QuestionsViewController(number: gameService.currentQuestionIndex, progressType: bool ? .win : .loose )
         navigationController?.pushViewController(progressController, animated: true)
     }
     

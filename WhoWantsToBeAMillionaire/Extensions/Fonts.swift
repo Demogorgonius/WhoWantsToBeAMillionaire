@@ -65,7 +65,7 @@ extension UIFont {
         enum Welcome {
             static let label = RobotoFont.Regular.size(of: 24)
             static let logo = RobotoFont.Bold.size(of: 36)
-            static let menuItem = RobotoFont.Bold.size(of: 32)
+            static let menuItem = RobotoFont.Bold.size(of: 28)
         }
         
         enum Registration {

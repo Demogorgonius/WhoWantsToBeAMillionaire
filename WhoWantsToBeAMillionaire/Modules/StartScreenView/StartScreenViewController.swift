@@ -31,4 +31,10 @@ extension StartScreenViewController: StartScreenViewDelegate {
         navigationController?.pushViewController(registrationController, animated: true)
     }
     
+    func statButton(didTapButton button: UIButton) {
+        
+        let resultsController = ResultsViewController()
+        navigationController?.pushViewController(resultsController, animated: true)
+    }
+    
 }

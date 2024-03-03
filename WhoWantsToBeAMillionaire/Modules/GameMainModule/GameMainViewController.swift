@@ -60,8 +60,8 @@ final class GameMainViewController: CustomViewController<GameMainView> {
 //        musicService.waitAnswer()
     }
     
-    func goToProgress() {
-        let progressController = QuestionsViewController()
+    func goToProgress(_ bool: Bool) {
+        let progressController = QuestionsViewController(number: gameService.currentQuestionIndex, isCorrect: bool)
         navigationController?.pushViewController(progressController, animated: true)
     }
     
@@ -104,18 +104,18 @@ extension GameMainViewController: GameMainViewDelegate {
 extension GameMainViewController: GameServiceViewProtocol {
     func correctAnswerSelect() {
         musicService.rightAnswer()
-        goToProgress()
+        goToProgress(true)
     }
     
     func getMoneySelect() {
         musicService.stopPlaying()
         timer?.invalidate()
-        goToProgress()
+        goToProgress(true)
     }
     
     func incorrectAnswerSelect() {
         musicService.wrongAnswer()
-        goToProgress()
+        goToProgress(false)
     }
     
     func fiftyClue(answers: [String]) {

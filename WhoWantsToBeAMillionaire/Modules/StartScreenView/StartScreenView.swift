@@ -11,6 +11,7 @@ import SnapKit
 protocol StartScreenViewDelegate: AnyObject {
     func rulesButton(didTapButton button: UIButton)
     func startGameButton(didTapButton button: UIButton)
+    func statButton(didTapButton button: UIButton)
 }
 
 class StartScreenView: CustomView {
@@ -42,54 +43,46 @@ class StartScreenView: CustomView {
     
     let rulesButton: UIButton = {
         let button = UIButton()
-        let customTextColor = UIColor(named: "custom-mint")
+        let customTextColor = UIColor(named: "custom-white")
         button.setTitleColor(customTextColor, for: .normal)
         button.titleLabel?.font = UIFont.TextFont.Welcome.menuItem
-        let underlinedString = NSAttributedString(
-            string: "Правила игры",
-            attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
-                         NSAttributedString.Key.foregroundColor: customTextColor as Any]
-        )
-        
-        button.setAttributedTitle(underlinedString, for: .normal)
+        button.setBackgroundImage(UIImage.ButtomImage.buttonBlue, for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.setTitle("Правила игры", for: .normal)
         
         return button
     }()
     
     let startGameButton: UIButton = {
         let button = UIButton()
-        let customTextColor = UIColor(named: "custom-mint")
+        let customTextColor = UIColor(named: "custom-white")
         button.setTitleColor(customTextColor, for: .normal)
         button.titleLabel?.font = UIFont.TextFont.Welcome.menuItem
+        button.setBackgroundImage(UIImage.ButtomImage.buttonBlue, for: .normal)
         button.titleLabel?.textAlignment = .center
-        
-        let underlinedString = NSAttributedString(
-            string: "Начало игры",
-            attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
-                         NSAttributedString.Key.foregroundColor: customTextColor as Any]
-        )
-        
-        button.setAttributedTitle(underlinedString, for: .normal)
-        
+        button.setTitle("Начало игры", for: .normal)
+
         return button
     }()
     
-    let welcomeLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Welcome"
+    let statButton: UIButton = {
+        let button = UIButton()
         let customTextColor = UIColor(named: "custom-white")
-        label.textColor = customTextColor
-        label.font = UIFont.TextFont.Welcome.label
-        label.textAlignment = .left
-        return label
+        button.setTitleColor(customTextColor, for: .normal)
+        button.titleLabel?.font = UIFont.TextFont.Welcome.menuItem
+        button.setBackgroundImage(UIImage.ButtomImage.buttonBlue, for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.setTitle("Статистика", for: .normal)
+        
+        return button
     }()
-    
+
     override func setViews() {
         self.addSubview(backgroundImageView)
         self.addSubview(titleLabel)
         self.addSubview(rulesButton)
         self.addSubview(startGameButton)
-        self.addSubview(welcomeLabel)
+        self.addSubview(statButton)
         self.addSubview(logoImageView)
     }
     
@@ -103,28 +96,29 @@ class StartScreenView: CustomView {
         
         titleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(welcomeLabel.snp_bottomMargin).offset(9)
+            $0.top.equalTo(logoImageView.snp_bottomMargin).offset(50)
             $0.width.equalTo(404)
             $0.height.equalTo(92)
         }
         rulesButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalTo(titleLabel.snp_bottomMargin).offset(107)
-            $0.width.equalTo(215)
+            $0.width.equalTo(300)
             $0.height.equalTo(74)
         }
         startGameButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(rulesButton.snp_bottomMargin).offset(6)
-            $0.width.equalTo(215)
+            $0.top.equalTo(rulesButton.snp_bottomMargin).offset(20)
+            $0.width.equalTo(300)
             $0.height.equalTo(74)
         }
-        welcomeLabel.snp.makeConstraints {
+        statButton.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(logoImageView.snp_bottomMargin).offset(17)
-            $0.width.equalTo(110)
-            $0.height.equalTo(28)
+            $0.top.equalTo(startGameButton.snp_bottomMargin).offset(20)
+            $0.width.equalTo(300)
+            $0.height.equalTo(74)
         }
+
         backgroundImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
@@ -133,6 +127,8 @@ class StartScreenView: CustomView {
         rulesButton.addTarget(self, action: #selector(didTapRulesButton), for: .touchUpInside)
         
         startGameButton.addTarget(self, action: #selector(didTapStartGameButton), for: .touchUpInside)
+        
+        statButton.addTarget(self, action: #selector(didTapStatButton), for: .touchUpInside)
     }
 
 }
@@ -144,5 +140,9 @@ extension StartScreenView {
     
     @objc func didTapStartGameButton(_ sender: UIButton) {
         delegate?.startGameButton(didTapButton: sender)
+    }
+    
+    @objc func didTapStatButton(_ sender: UIButton) {
+        delegate?.statButton(didTapButton: sender)
     }
 }

@@ -61,8 +61,10 @@ enum QuestionHelper: String, CaseIterable {
     
     var image: UIImage {
         switch self {
-        case .five, .ten, .fifteen:
+        case .five, .ten:
             return UIImage.ButtomImage.buttonBlue ?? UIImage()
+        case .fifteen:
+            return UIImage.ButtomImage.buttonGold ?? UIImage()
         default:
             return UIImage.ButtomImage.buttonPurple ?? UIImage()
         }

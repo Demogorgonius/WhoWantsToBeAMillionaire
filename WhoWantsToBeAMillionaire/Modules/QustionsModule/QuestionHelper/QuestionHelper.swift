@@ -33,7 +33,7 @@ enum QuestionHelper: String, CaseIterable {
         case .three:
             "300 RUB"
         case .four:
-            "400 RUB"
+            "500 RUB"
         case .five:
             "1000 RUB"
         case .six:
@@ -61,12 +61,8 @@ enum QuestionHelper: String, CaseIterable {
     
     var image: UIImage {
         switch self {
-        case .one:
-            return UIImage.ButtomImage.buttonGreen ?? UIImage()
-        case .five, .ten:
+        case .five, .ten, .fifteen:
             return UIImage.ButtomImage.buttonBlue ?? UIImage()
-        case .fifteen:
-            return UIImage.ButtomImage.buttonGold ?? UIImage()
         default:
             return UIImage.ButtomImage.buttonPurple ?? UIImage()
         }

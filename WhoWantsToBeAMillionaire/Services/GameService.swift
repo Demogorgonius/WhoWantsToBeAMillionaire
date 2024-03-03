@@ -41,7 +41,7 @@ class GameService {
     weak var view: GameServiceViewProtocol!
     var questions: [Question] = []
     var questionApi = QuestionsAPI()
-    var currentQuestionIndex: Int = 14
+    var currentQuestionIndex: Int = 0
     var currentQuestion: GameQuestion?
     var currentAnswerButtonIndex: Int = 0
     var cluesAvailability = [

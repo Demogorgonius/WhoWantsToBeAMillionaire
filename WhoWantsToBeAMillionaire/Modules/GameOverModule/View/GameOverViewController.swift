@@ -77,6 +77,6 @@ final class GameOverViewController: CustomViewController<GameOverView> {
 // MARK: - GameOverViewDelegate
 extension GameOverViewController: GameOverViewDelegate {
     func playAgainButtonPressed(_ button: UIButton) {
-        print("Начать игру заново")
+        navigationController?.popToRootViewController(animated: true)
     }
 }

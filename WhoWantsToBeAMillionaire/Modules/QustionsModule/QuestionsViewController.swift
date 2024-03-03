@@ -13,6 +13,7 @@ final class QuestionsViewController: CustomViewController<QuestionsView> {
     
     /// индекс текущего вопроса
     private var questionIndex: Int = 0
+    
     /// выбор проигрываемой мелодии в зависимости от правильности ответа
     private var isCorrect: Bool
     
@@ -32,16 +33,26 @@ final class QuestionsViewController: CustomViewController<QuestionsView> {
         super.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        playSound()
+        popView()
+        changeProgressColor(questionIndex)
+    }
+    
+    
     func userWin() {
         // If question number is 15 - play user win
         musicService.userWin()
     }
     
-    // Запуск музыки зависимо от значения true/false
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        playSound()
-        popView()
+    /// 
+    private func changeProgressColor(_ index: Int) {
+        guard index >= 0 && index <= 14 else {
+            print("недопустимый индекс")
+            return
+        }
+        customView.changeBackgroundColor(at: index)
     }
     
     // Активация музыки.

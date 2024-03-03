@@ -32,7 +32,6 @@ final class QuestionView: UIView {
         return label
     }()
      
-    
     // MARK: Init
     init(image: UIImage, number: String, price: String) {
         self.backgroundView.image = image
@@ -45,6 +44,10 @@ final class QuestionView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateImage(with image: UIImage) {
+        backgroundView.image = image
     }
 }
 

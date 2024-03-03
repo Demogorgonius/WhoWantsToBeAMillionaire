@@ -9,22 +9,18 @@ import UIKit
 import SnapKit
 
 final class QuestionsView: CustomView {
-        
+    
     // MARK: Private Properties
-    /// Фоновое изображение
     private lazy var backgroundImageView = makeImageView(
         image: UIImage.BackgroundImage.background ?? UIImage()
     )
     
-    /// Логотип
     private lazy var logoImageView = makeImageView(
         image: UIImage.LogoImage.logo ?? UIImage()
     )
     
-    /// Вертикальный Стек с 15 вопросами
     private lazy var questionsVStack = makeStackView()
 
-    
     // MARK: Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,19 +55,26 @@ final class QuestionsView: CustomView {
             make.trailing.equalToSuperview().offset(-34)
         }
     }
+    
+    func changeBackgroundColor(at index: Int) {
+        let currentImage = index <= 13 ? UIImage.ButtomImage.buttonGreen : UIImage.ButtomImage.buttonGold
+        if let view = questionsVStack.subviews.reversed()[index] as? QuestionView {
+            view.updateImage(with: currentImage ?? UIImage())
+        }
+    }
 }
 
 // MARK: - Create and Setup Question View
 extension QuestionsView {
     
-    /// Создание и добавление в стек 15-ти вьюшек с номером вопроса и неcгораемой суммой
     private func configureQuestionView() {
+        let title = QuestionHelper.allCases
+        var view: QuestionView?
         (0...QuestionHelper.allCases.count - 1).reversed().forEach { i in
-            let title = QuestionHelper.allCases
-            let view = QuestionView(image: title[i].image, 
-                                    number: title[i].rawValue,
+            view = QuestionView(image: title[i].image,
+                                number: title[i].rawValue,
                                     price: title[i].price)
-            questionsVStack.addArrangedSubview(view)
+            questionsVStack.addArrangedSubview(view ?? UIView())
         }
     }
 }

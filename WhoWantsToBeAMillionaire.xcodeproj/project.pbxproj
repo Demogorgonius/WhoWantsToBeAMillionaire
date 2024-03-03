@@ -44,6 +44,7 @@
 		D96B366E2B8FF7340094DCA1 /* ClueButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96B366D2B8FF7340094DCA1 /* ClueButtonView.swift */; };
 		D973137C2B8DFDBA0046083E /* Sounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973137B2B8DFDBA0046083E /* Sounds.swift */; };
 		D973137E2B8DFE930046083E /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D973137D2B8DFE930046083E /* Fonts.swift */; };
+		D9A622A52B946E98002BAC3C /* ProgressType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A622A42B946E98002BAC3C /* ProgressType.swift */; };
 		D9B3E5782B935BA500E44677 /* GameMusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B3E5772B935BA500E44677 /* GameMusicService.swift */; };
 		D9CEFE0A2B8FA3320009949C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CEFE092B8FA3320009949C /* AudioPlayer.swift */; };
 		D9CF9E1D2B93876A00E78E8B /* clue-right-to-error.png in Resources */ = {isa = PBXBuildFile; fileRef = D9CF9E1C2B93876A00E78E8B /* clue-right-to-error.png */; };
@@ -117,6 +118,7 @@
 		D96B366D2B8FF7340094DCA1 /* ClueButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueButtonView.swift; sourceTree = "<group>"; };
 		D973137B2B8DFDBA0046083E /* Sounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sounds.swift; sourceTree = "<group>"; };
 		D973137D2B8DFE930046083E /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		D9A622A42B946E98002BAC3C /* ProgressType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressType.swift; sourceTree = "<group>"; };
 		D9B3E5772B935BA500E44677 /* GameMusicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMusicService.swift; sourceTree = "<group>"; };
 		D9CEFE092B8FA3320009949C /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		D9CF9E1C2B93876A00E78E8B /* clue-right-to-error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clue-right-to-error.png"; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 				D9CF9E222B93C28000E78E8B /* UIButton.swift */,
 				A5AB29632B9421EB0093B49E /* ViewFactory.swift */,
 				A5AB29652B94220D0093B49E /* LabelFactory.swift */,
+				D9A622A42B946E98002BAC3C /* ProgressType.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				A5AB29642B9421EB0093B49E /* ViewFactory.swift in Sources */,
 				A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */,
 				09E3DCE42B90F04500C73649 /* RulesViewController.swift in Sources */,
+				D9A622A52B946E98002BAC3C /* ProgressType.swift in Sources */,
 				09E3DCE62B90F07400C73649 /* RulesView.swift in Sources */,
 				A5B8954A2B8BE18200A30134 /* SceneDelegate.swift in Sources */,
 				AD0799DD2B8E8E8200AEFFE7 /* GameOverViewController.swift in Sources */,

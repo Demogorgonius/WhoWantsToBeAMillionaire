@@ -64,7 +64,7 @@ class GameService {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
-                    if let questions = data.questions {
+                    if let questions = data.results {
                         self.questions = questions
                     }
                     
@@ -93,7 +93,7 @@ class GameService {
         var ansArray: [String] = question.incorrectAnswers
         ansArray.append(question.correctAnswer)
         ansArray.shuffle()
-        return GameQuestion(text: question.text,
+        return GameQuestion(text: question.question,
                             answer: ansArray,
                             trueAnswer: ansArray.firstIndex(of: question.correctAnswer) ?? 0,
                             index: currentQuestionIndex + 1,

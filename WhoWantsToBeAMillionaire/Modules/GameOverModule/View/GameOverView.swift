@@ -29,13 +29,13 @@ final class GameOverView: CustomView {
     
     private lazy var attemptTitleLabel = makeLabel(
         title: "",
-        font: UIFont.RobotoFont.Regular.size(of: 24),
+        font: UIFont.RobotoFont.Regular.size(of: 22),
         textColor: UIColor(named: "custom-white")
     )
     
     private lazy var loseTitleLabel = makeLabel(
         title: "",
-        font: UIFont.RobotoFont.Bold.size(of: 30),
+        font: UIFont.RobotoFont.Bold.size(of: 25),
         textColor: UIColor(named: "custom-orange")
     )
     
@@ -66,12 +66,14 @@ final class GameOverView: CustomView {
         
         attemptTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(logoImageView.snp.bottom).offset(20)
-            make.centerX.equalTo(self)
+            make.centerX.equalToSuperview()
+            make.leading.equalToSuperview().offset(15)
+            make.trailing.equalToSuperview().offset(-15)
         }
         
         loseTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(attemptTitleLabel.snp.bottom).offset(20)
-            make.centerX.equalTo(self)
+            make.centerX.equalToSuperview()
         }
         
         playAgainButton.snp.makeConstraints { make in
@@ -118,6 +120,8 @@ extension GameOverView {
         label.font = font
         label.textColor = textColor
         label.numberOfLines = 0
+        label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
         return label
     }
     

@@ -64,7 +64,7 @@ final class GameMainViewController: CustomViewController<GameMainView> {
     func waitForAnswer() {
         waitSeconds = 30
         startTimer()
-//        musicService.waitAnswer()
+        musicService.waitAnswer()
     }
     
     func goToProgress(_ type: ProgressType) {
@@ -141,6 +141,7 @@ extension GameMainViewController: GameServiceViewProtocol {
     func incorrectAnswerHighlight(answer: Int) {
         customView.highlightAnswer(answer)
         customView.disableAnswer(answer)
+        waitForAnswer()
     }
     
 }

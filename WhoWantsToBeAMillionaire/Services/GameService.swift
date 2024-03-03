@@ -40,6 +40,7 @@ class GameService {
     
     weak var view: GameServiceViewProtocol!
     var questions: [Question] = []
+    var networkService = NetworkService()
     var questionApi = QuestionsAPI()
     var currentQuestionIndex: Int = 0
     var currentQuestion: GameQuestion?
@@ -50,9 +51,28 @@ class GameService {
         ClueTypes.help: true,
         ClueTypes.rightToError: true]
     var rightToErrorSelect = false
-        
+    
     init() {
+        
         questions = questionApi.fetchData()
+        setData()
+    }
+    
+    func setData() {
+        networkService.getData(completionBlock: { [weak self] result in
+            guard let self else { return }
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
+                    if let questions = data.questions {
+                        self.questions = questions
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        })
     }
     
     func getQuestion() -> GameQuestion{
@@ -78,7 +98,7 @@ class GameService {
                             trueAnswer: ansArray.firstIndex(of: question.correctAnswer) ?? 0,
                             index: currentQuestionIndex + 1,
                             sum: makeSum()
-                            )
+        )
     }
     
     func makeSum() -> String {
@@ -161,4 +181,5 @@ class GameService {
     }
     
 }
+
 

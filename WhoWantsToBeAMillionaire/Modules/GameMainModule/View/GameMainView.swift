@@ -16,6 +16,7 @@ protocol GameMainViewDelegate: AnyObject {
 class GameMainView: CustomView {
     var answerButton: AnswerButtonView?
     var clueButton: ClueButtonView?
+    var graphVC: GraphView?
     weak var delegate: GameMainViewDelegate?
     
     fileprivate var question: GameQuestion?
@@ -221,6 +222,15 @@ class GameMainView: CustomView {
             button.disable(false)
         }
     }
+    
+    func showGraphView() {
+            graphVC = GraphView(with: [5,10,80,5])
+            guard let graphVC else { return }
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+            graphVC.addGestureRecognizer(tap)
+            addSubview(graphVC)
+        }
+
 }
 
 extension GameMainView {
@@ -250,6 +260,12 @@ extension GameMainView {
 
 // MARK: - UI Elements
 extension GameMainView {
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+           guard let graphVC else { return }
+           graphVC.removeFromSuperview()
+       }
+
     
     private func makeImageView(image: UIImage) -> UIImageView {
         let imageView = UIImageView()
@@ -283,6 +299,7 @@ extension GameMainView {
     @objc func didTapGetMoneyButton(_ sender: UIButton) {
         delegate?.gameMainView(didTapButton: sender)
     }
+    
 }
 
 extension GameMainView: AnswerButtonViewDelegate {
@@ -296,5 +313,6 @@ extension GameMainView: ClueButtonViewDelegate {
     func clueButtonView(didTapButton button: ClueUIButton) {
         clueButton?.didTapClueButton(button)
     }
+    
 }
 

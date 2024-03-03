@@ -50,6 +50,7 @@ class GameService {
         
     init() {
         questions = questionApi.fetchData()
+        currentQuestion = makeQuestion(questions[currentQuestionIndex])
     }
     
     func getQuestion() -> GameQuestion{
@@ -129,21 +130,22 @@ class GameService {
             clues[ClueTypes.call] = false
             view.callClue(answer: indexCall)
         case .help:
-            guard let currentQuestion else { return }
-            var percentageGetHelp: [Int] = []
-            let indexTrueAnswer = currentQuestion.trueAnswer
-            percentageGetHelp[indexTrueAnswer] = 100
-            for index in 0...3 {
-                
-                if index != indexTrueAnswer {
-                    
-                    percentageGetHelp[index] = Int.random(in: 0..<15)
-                    percentageGetHelp[indexTrueAnswer] -= percentageGetHelp[index]
-                }
-            }
-            
-            clues[ClueTypes.help] = false
-            view.helpClue(answers: percentageGetHelp)
+//            guard let currentQuestion else { return }
+//            var percentageGetHelp: [Int] = []
+//            let indexTrueAnswer = currentQuestion.trueAnswer
+//            percentageGetHelp[indexTrueAnswer] = 100
+//            for index in 0...3 {
+//                
+//                if index != indexTrueAnswer {
+//                    
+//                    percentageGetHelp[index] = Int.random(in: 0..<15)
+//                    percentageGetHelp[indexTrueAnswer] -= percentageGetHelp[index]
+//                }
+//            }
+//            
+//            clues[ClueTypes.help] = false
+//            view.helpClue(answers: percentageGetHelp)
+            view.helpClue(answers: [1,3,4,6])
         case .rightToError:
             rightToErrorSelect = true
             clues[ClueTypes.rightToError] = false

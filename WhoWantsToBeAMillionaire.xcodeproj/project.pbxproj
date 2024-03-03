@@ -18,6 +18,9 @@
 		09E3DCE42B90F04500C73649 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E3DCE32B90F04500C73649 /* RulesViewController.swift */; };
 		09E3DCE62B90F07400C73649 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E3DCE52B90F07400C73649 /* RulesView.swift */; };
 		A5AB295C2B925E4D0093B49E /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB295B2B925E4D0093B49E /* GameService.swift */; };
+		A5AB295E2B93E58E0093B49E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB295D2B93E58E0093B49E /* GraphView.swift */; };
+		A5AB29602B93F5920093B49E /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB295F2B93F5920093B49E /* ViewFactory.swift */; };
+		A5AB29622B9413160093B49E /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AB29612B9413160093B49E /* LabelFactory.swift */; };
 		A5B895482B8BE18200A30134 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895472B8BE18200A30134 /* AppDelegate.swift */; };
 		A5B8954A2B8BE18200A30134 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B895492B8BE18200A30134 /* SceneDelegate.swift */; };
 		A5B895512B8BE18300A30134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5B895502B8BE18300A30134 /* Assets.xcassets */; };
@@ -87,6 +90,9 @@
 		09E3DCE32B90F04500C73649 /* RulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		09E3DCE52B90F07400C73649 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
 		A5AB295B2B925E4D0093B49E /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		A5AB295D2B93E58E0093B49E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		A5AB295F2B93F5920093B49E /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
+		A5AB29612B9413160093B49E /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 		A5B895442B8BE18200A30134 /* WhoWantsToBeAMillionaire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhoWantsToBeAMillionaire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B895472B8BE18200A30134 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B895492B8BE18200A30134 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -269,6 +275,8 @@
 				D5AFCAFD2B9371DF000B4022 /* ClueTypes.swift */,
 				D9CF9E202B938CE000E78E8B /* ClueUIButton.swift */,
 				D9CF9E222B93C28000E78E8B /* UIButton.swift */,
+				A5AB295F2B93F5920093B49E /* ViewFactory.swift */,
+				A5AB29612B9413160093B49E /* LabelFactory.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -370,6 +378,7 @@
 				D9550A612B8FDFB10018AA2C /* GameMainView.swift */,
 				D96B366B2B8FF7200094DCA1 /* AnswerButtonView.swift */,
 				D96B366D2B8FF7340094DCA1 /* ClueButtonView.swift */,
+				A5AB295D2B93E58E0093B49E /* GraphView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -527,6 +536,7 @@
 			files = (
 				AD0799E22B8F33AA00AEFFE7 /* QuestionsViewController.swift in Sources */,
 				AD0799DF2B8E8EC400AEFFE7 /* GameOverView.swift in Sources */,
+				A5AB295E2B93E58E0093B49E /* GraphView.swift in Sources */,
 				D96B366C2B8FF7200094DCA1 /* AnswerButtonView.swift in Sources */,
 				D9CF9E232B93C28000E78E8B /* UIButton.swift in Sources */,
 				D973137E2B8DFE930046083E /* Fonts.swift in Sources */,
@@ -539,6 +549,7 @@
 				098E046E2B936F78006090C0 /* ResultsView.swift in Sources */,
 				D9CEFE0A2B8FA3320009949C /* AudioPlayer.swift in Sources */,
 				D9550A652B8FE3E10018AA2C /* GameMainViewController.swift in Sources */,
+				A5AB29602B93F5920093B49E /* ViewFactory.swift in Sources */,
 				D9E769542B8DF5150096FAEC /* Images.swift in Sources */,
 				D588C67C2B8F3B1700B39884 /* Question.swift in Sources */,
 				09578BAB2B90CB76008F57D4 /* RegistrationView.swift in Sources */,
@@ -547,6 +558,7 @@
 				D5AFCAFE2B9371DF000B4022 /* ClueTypes.swift in Sources */,
 				AD0799E62B8F691E00AEFFE7 /* QuestionView.swift in Sources */,
 				AD0799EA2B8F748300AEFFE7 /* QuestionHelper.swift in Sources */,
+				A5AB29622B9413160093B49E /* LabelFactory.swift in Sources */,
 				098E04722B9395FC006090C0 /* ResultTableViewCell.swift in Sources */,
 				A5B8956B2B8D1BFD00A30134 /* CustomViewController.swift in Sources */,
 				D9550A622B8FDFB10018AA2C /* GameMainView.swift in Sources */,

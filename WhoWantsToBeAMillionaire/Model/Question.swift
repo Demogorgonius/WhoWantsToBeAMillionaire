@@ -18,20 +18,12 @@ struct Question: Codable {
     let correctAnswer: String
     let incorrectAnswers: [String]
     
-//    enum CodingKeys: String, CodingKey {
-//        case type
-//        case difficulty
-//        case category
-//        case question
-//        case correctAnswer = "correct_answer"
-//        case incorrectAnswers = "incorrect_answers"
-//        }
     
     init(t: String, d: String, c: String, q: String, cA: String, iA: [String]) {
         type = t
         difficulty = d
         category = c
-        question = q
+        question = q.replacingOccurrences(of: "&quot", with: "\"")
         correctAnswer = cA
         incorrectAnswers = iA
     }

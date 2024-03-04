@@ -27,6 +27,7 @@ final class GameMainViewController: CustomViewController<GameMainView> {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
         customView.setDefaultButtonsState()
         customView.updateCluesState(state: gameService.cluesAvailability)
         setQuestion()

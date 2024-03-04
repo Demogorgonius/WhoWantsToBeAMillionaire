@@ -57,6 +57,11 @@ final class QuestionsViewController: CustomViewController<QuestionsView> {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     
     func checkUserWin() -> Bool {
         return questionIndex == 14

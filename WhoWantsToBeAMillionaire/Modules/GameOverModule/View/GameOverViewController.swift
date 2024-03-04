@@ -30,6 +30,12 @@ final class GameOverViewController: CustomViewController<GameOverView> {
         setLabels()
         registrationService.setAmountForLastUser(amount)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     // MARK: Init
     init(number: Int, progressType: ProgressType, amount: Int) {
         self.questionIndex = number

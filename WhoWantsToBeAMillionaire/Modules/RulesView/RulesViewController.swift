@@ -13,5 +13,10 @@ class RulesViewController: CustomViewController<RulesView> {
         super.viewDidLoad()
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
 
 }

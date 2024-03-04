@@ -93,7 +93,7 @@ class GameService {
         var ansArray: [String] = question.incorrectAnswers
         ansArray.append(question.correctAnswer)
         ansArray.shuffle()
-        return GameQuestion(text: question.question,
+        return GameQuestion(text: question.question.replacingOccurrences(of: "&quot", with: "'"),
                             answer: ansArray,
                             trueAnswer: ansArray.firstIndex(of: question.correctAnswer) ?? 0,
                             index: currentQuestionIndex + 1,

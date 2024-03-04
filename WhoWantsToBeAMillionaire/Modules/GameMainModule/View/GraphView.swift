@@ -82,7 +82,7 @@ class GraphView: CustomView {
         let yPosition = self.bounds.minY + 50
         
         for (index, graph) in [graphViewOne, graphViewTTwo, graphViewThree, graphViewFour].enumerated() {
-            graph.frame = CGRect(x: xPosition, y: yPosition + (450 - getHieght(graphData![index]) - 50), width: 50, height: getHieght(graphData![index]))
+            graph.frame = CGRect(x: xPosition, y: yPosition + (450 - getHeight(graphData![index]) - 50), width: 50, height: getHeight(graphData![index]))
             
             let label = LabelFactory.createShadowLabel().shadowLabel
             label.text = GraphViewFactory().getSignature(index)
@@ -96,7 +96,7 @@ class GraphView: CustomView {
     }
     
     
-    private func getHieght(_ int: Int) -> CGFloat {
+    private func getHeight(_ int: Int) -> CGFloat {
        return 450 * CGFloat(int) / 100
     }
     

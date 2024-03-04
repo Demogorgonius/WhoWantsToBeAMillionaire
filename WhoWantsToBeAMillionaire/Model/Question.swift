@@ -23,7 +23,7 @@ struct Question: Codable {
         type = t
         difficulty = d
         category = c
-        question = q.replacingOccurrences(of: "&quot", with: "\"")
+        question = q
         correctAnswer = cA
         incorrectAnswers = iA
     }
